@@ -15,5 +15,6 @@ struct Settings {
 
 Settings options(int argc, char **argv);
 void usage(char **argv);
+bool valid(Settings &settings);
 
 #endif
