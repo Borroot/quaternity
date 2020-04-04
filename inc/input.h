@@ -1,3 +1,6 @@
+#ifndef INPUT_H
+# define INPUT_H
+
 #include <iostream>
 #include <string>
 
@@ -9,3 +12,5 @@ T ask(string question)
 	cin >> answer;
 	return answer;
 }
+
+#endif
