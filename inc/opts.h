@@ -1,6 +1,10 @@
 #ifndef OPTS_H
 # define OPTS_H
 
+#define DEFAULT_SET_SIZE 4
+#define DEFAULT_NUM_SETS 3
+#define DEFAULT_NUM_PLAYERS 2
+
 using namespace std;
 
 struct Settings {
@@ -10,5 +14,6 @@ struct Settings {
 };
 
 Settings options(int argc, char **argv);
+void usage(char **argv);
 
 #endif
