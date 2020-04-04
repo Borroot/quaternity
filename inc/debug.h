@@ -8,8 +8,9 @@
 
 using namespace std;
 
-//template <class T>
-//ostream &operator<<(ostream &os, const vector<Card> &vector);
-ostream &operator<<(ostream &os, const Card &card);
+template <class T>
+ostream &operator<<(ostream &out, const vector<T> &vector);
+ostream &operator<<(ostream &out, const Card &card);
+ostream &operator<<(ostream &out, const Player &player);
 
 #endif
