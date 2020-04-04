@@ -17,7 +17,7 @@ $(TARGET): % : $(OBJ_FILES)
 	$(CXX) $(CFLAGS) $(IFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CFLAGS) $(IFLAGS) -c -o $@ $<
 
 clean:
