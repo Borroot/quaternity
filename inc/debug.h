@@ -9,9 +9,6 @@
 
 using namespace std;
 
-ostream &operator<<(ostream &out, const Card &card);
-ostream &operator<<(ostream &out, const Player &player);
-
 template <class T>
 ostream &operator<<(ostream &out, const vector<T> &vector)
 {
@@ -23,6 +20,18 @@ ostream &operator<<(ostream &out, const vector<T> &vector)
 		}
 	}
 	out << "]";
+	return out;
+}
+
+ostream &operator<<(ostream &out, const Card &card)
+{
+	out << "C(" << card.category << "," << card.players << ")";
+	return out;
+}
+
+ostream &operator<<(ostream &out, const Player &player)
+{
+	out << "P(" << player.num_cards << "," << player.categories << ")";
 	return out;
 }
 

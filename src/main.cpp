@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "debug.h"
 #include "card.h"
 #include "player.h"
+#include "tui.h"
 
 using namespace std;
 
@@ -28,7 +30,7 @@ vector<Player> init_players(const int &SET_SIZE, const int &NUM_SETS, const int 
 
 int main(int argc, const char **argv)
 {
-	int SET_SIZE = 4;
+	int SET_SIZE = 5;
 	int NUM_SETS = 3;
 	int NUM_PLAYERS = 3;
 
@@ -39,6 +41,9 @@ int main(int argc, const char **argv)
 
 	cout << cards << endl;
 	cout << players << endl;
+
+	string answer = ask<string>("hello?");
+	cout << answer << endl;
 
 	return 0;
 }
