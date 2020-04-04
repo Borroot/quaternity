@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "card.h"
+#include "opts.h"
 #include "player.h"
 
 using namespace std;
@@ -32,6 +33,15 @@ ostream &operator<<(ostream &out, const Card &card)
 ostream &operator<<(ostream &out, const Player &player)
 {
 	out << "P(" << player.num_cards << "," << player.categories << ")";
+	return out;
+}
+
+ostream &operator<<(ostream &out, const Settings &settings)
+{
+	out << "Settings: "
+		<< "set size = " << settings.SET_SIZE << ", "
+		<< "num sets = " << settings.NUM_SETS << ", "
+		<< "num players = " << settings.NUM_PLAYERS << ".";
 	return out;
 }
 
