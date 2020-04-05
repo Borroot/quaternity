@@ -4,9 +4,8 @@
 #include <iostream>
 #include <vector>
 
-#include "card.h"
-#include "opts.h"
-#include "player.h"
+#include "settings.h"
+#include "state.h"
 
 using namespace std;
 
@@ -26,13 +25,13 @@ ostream &operator<<(ostream &out, const vector<T> &vector)
 
 ostream &operator<<(ostream &out, const Card &card)
 {
-	out << "C(" << card.category << "," << card.players << ")";
+	out << "(" << card.category << "," << card.players << ")";
 	return out;
 }
 
 ostream &operator<<(ostream &out, const Player &player)
 {
-	out << "P(" << player.num_cards << "," << player.categories << ")";
+	out << "(" << player.num_cards << "," << player.categories << ")";
 	return out;
 }
 
@@ -42,6 +41,12 @@ ostream &operator<<(ostream &out, const Settings &settings)
 		<< "set size = " << settings.SET_SIZE << ", "
 		<< "num sets = " << settings.NUM_SETS << ", "
 		<< "num players = " << settings.NUM_PLAYERS << ".";
+	return out;
+}
+
+ostream &operator<<(ostream &out, const State &state)
+{
+	out << "Cards: " << state.cards << endl << "Players: " << state.players;
 	return out;
 }
 

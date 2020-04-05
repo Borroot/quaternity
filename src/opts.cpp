@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "opts.h"
+#include "settings.h"
 
 using namespace std;
 

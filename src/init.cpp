@@ -1,9 +1,16 @@
 #include <vector>
 
-#include "card.h"
 #include "init.h"
-#include "opts.h"
-#include "player.h"
+#include "settings.h"
+#include "state.h"
+
+State init_state(const Settings &settings)
+{
+	vector<Card> cards = init_cards(settings);
+	vector<Player> players = init_players(settings);
+	State state = {cards, players};
+	return state;
+}
 
 vector<Card> init_cards(const Settings &settings)
 {
