@@ -30,4 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Builds
 quaternity
+tester

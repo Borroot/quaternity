@@ -6,7 +6,7 @@
 using namespace std;
 
 struct Card {
-	int category;             // The category (id) this card belongs to.
+	int category;             // The category this card belongs to.
 	vector<bool> players;     // The players which could have this card.
 };
 
