@@ -52,6 +52,10 @@ $(OBJ_DIR)/%.o: $(TST_DIR)/%.cpp
 test:
 	@./tester
 
+docs:
+	@doxygen &> /dev/null
+	@echo "docs generated"
+
 clean:
 	rm -rf $(OBJ_DIR) $(TARGETS)
 
@@ -59,4 +63,4 @@ re:
 	@$(MAKE) clean
 	@$(MAKE)
 
-.PHONY: all test clean re
+.PHONY: all test docs clean re
