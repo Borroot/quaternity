@@ -1,3 +1,9 @@
+/**
+ * @file
+ *
+ * @brief This file defines user input function headers.
+ */
+
 #ifndef INPUT_H
 # define INPUT_H
 

@@ -1,8 +1,8 @@
 /**
  * @file
  *
- * @brief This file defines print operators for custom structs.
- * These are useful for debugging purposes.
+ * @brief This file defines print operator headers for custom structs
+ * and a template for printing a vector. These are useful for debugging purposes.
  */
 
 #ifndef DEBUG_H

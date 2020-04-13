@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * @brief This file defines an initialization function.
+ * @brief This file defines an initialization function header.
  */
 
 #ifndef INIT_H
