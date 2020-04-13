@@ -69,54 +69,55 @@ $(function() {
 <div class="title">init.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="init_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="init_8h.html">init.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="settings_8h.html">settings.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">state.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">    7</a></span>&#160;vector&lt;Card&gt; <a class="code" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a>(<span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    vector&lt;Card&gt; cards;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a> * settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; i++) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="structCard.html">Card</a> card = {vector&lt;bool&gt;(settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>, <span class="keyword">true</span>)};</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        cards.push_back(card);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> cards;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">   17</a></span>&#160;vector&lt;Player&gt; <a class="code" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a>(<span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    vector&lt;Player&gt; players;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; i++) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="structPlayer.html">Player</a> player = {(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a> * settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) / settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                          vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0)};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        players.push_back(player);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> players;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="init_8h.html#ab6156b9ef17e2921a2e5406a6de579ff">   28</a></span>&#160;<a class="code" href="structState.html">State</a> <a class="code" href="init_8cpp.html#ab6156b9ef17e2921a2e5406a6de579ff">init_state</a>(<span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vector&lt;Card&gt; cards = <a class="code" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a>(settings);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    vector&lt;Player&gt; players = <a class="code" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a>(settings);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="structState.html">State</a> state = {0, cards, players};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> state;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<a href="init_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="init_8h.html">init.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="settings_8h.html">settings.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">state.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">   20</a></span>&#160;vector&lt;Card&gt; <a class="code" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a>(<span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    vector&lt;Card&gt; cards;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a> * settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; i++) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structCard.html">Card</a> card = {vector&lt;bool&gt;(settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>, <span class="keyword">true</span>)};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cards.push_back(card);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> cards;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">   39</a></span>&#160;vector&lt;Player&gt; <a class="code" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a>(<span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vector&lt;Player&gt; players;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; i++) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="structPlayer.html">Player</a> player = {(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a> * settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) / settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                          vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0)};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        players.push_back(player);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> players;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="init_8h.html#ab6156b9ef17e2921a2e5406a6de579ff">   59</a></span>&#160;<a class="code" href="structState.html">State</a> <a class="code" href="init_8cpp.html#ab6156b9ef17e2921a2e5406a6de579ff">init_state</a>(<span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    vector&lt;Card&gt; cards = <a class="code" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a>(settings);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    vector&lt;Player&gt; players = <a class="code" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a>(settings);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structState.html">State</a> state = {0, cards, players};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> state;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructSettings_html_a78cf5ed18d69ce74d769a4a9058154c5"><div class="ttname"><a href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">Settings::SET_SIZE</a></div><div class="ttdeci">const int SET_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00009">settings.h:9</a></div></div>
-<div class="ttc" id="asettings_8h_html"><div class="ttname"><a href="settings_8h.html">settings.h</a></div></div>
-<div class="ttc" id="ainit_8cpp_html_ab6156b9ef17e2921a2e5406a6de579ff"><div class="ttname"><a href="init_8cpp.html#ab6156b9ef17e2921a2e5406a6de579ff">init_state</a></div><div class="ttdeci">State init_state(const Settings &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00028">init.cpp:28</a></div></div>
-<div class="ttc" id="astructSettings_html_a86e8b42ad2fcbb6bb68f2b02b932899a"><div class="ttname"><a href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">Settings::NUM_PLAYERS</a></div><div class="ttdeci">const int NUM_PLAYERS</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00011">settings.h:11</a></div></div>
+<div class="ttc" id="astructSettings_html_a78cf5ed18d69ce74d769a4a9058154c5"><div class="ttname"><a href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">Settings::SET_SIZE</a></div><div class="ttdeci">const int SET_SIZE</div><div class="ttdoc">The size of one set/category, aka the number of cards in one size/category.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00033">settings.h:33</a></div></div>
+<div class="ttc" id="asettings_8h_html"><div class="ttname"><a href="settings_8h.html">settings.h</a></div><div class="ttdoc">This file defines the settings struct.</div></div>
+<div class="ttc" id="ainit_8cpp_html_ab6156b9ef17e2921a2e5406a6de579ff"><div class="ttname"><a href="init_8cpp.html#ab6156b9ef17e2921a2e5406a6de579ff">init_state</a></div><div class="ttdeci">State init_state(const Settings &amp;settings)</div><div class="ttdoc">Initialize the starting state corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00059">init.cpp:59</a></div></div>
+<div class="ttc" id="astructSettings_html_a86e8b42ad2fcbb6bb68f2b02b932899a"><div class="ttname"><a href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">Settings::NUM_PLAYERS</a></div><div class="ttdeci">const int NUM_PLAYERS</div><div class="ttdoc">The number of players playing the game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00043">settings.h:43</a></div></div>
 <div class="ttc" id="astructCard_html"><div class="ttname"><a href="structCard.html">Card</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00008">state.h:8</a></div></div>
-<div class="ttc" id="ainit_8h_html"><div class="ttname"><a href="init_8h.html">init.h</a></div></div>
-<div class="ttc" id="astructSettings_html"><div class="ttname"><a href="structSettings.html">Settings</a></div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00008">settings.h:8</a></div></div>
-<div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00010">settings.h:10</a></div></div>
+<div class="ttc" id="ainit_8h_html"><div class="ttname"><a href="init_8h.html">init.h</a></div><div class="ttdoc">This file defines an initialization function.</div></div>
+<div class="ttc" id="astructSettings_html"><div class="ttname"><a href="structSettings.html">Settings</a></div><div class="ttdoc">The settings which characterize a game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00028">settings.h:28</a></div></div>
+<div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdoc">The number of sets/categories.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00038">settings.h:38</a></div></div>
 <div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
 <div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00017">state.h:17</a></div></div>
 <div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div></div>
-<div class="ttc" id="ainit_8cpp_html_a36220fea23214cf9540b53a321e3a5d8"><div class="ttname"><a href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a></div><div class="ttdeci">vector&lt; Card &gt; init_cards(const Settings &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00007">init.cpp:7</a></div></div>
-<div class="ttc" id="ainit_8cpp_html_a2b06c9f6753f87b097f3ed0fdea7604d"><div class="ttname"><a href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a></div><div class="ttdeci">vector&lt; Player &gt; init_players(const Settings &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00017">init.cpp:17</a></div></div>
+<div class="ttc" id="ainit_8cpp_html_a36220fea23214cf9540b53a321e3a5d8"><div class="ttname"><a href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a></div><div class="ttdeci">vector&lt; Card &gt; init_cards(const Settings &amp;settings)</div><div class="ttdoc">Initialize the cards corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00020">init.cpp:20</a></div></div>
+<div class="ttc" id="ainit_8cpp_html_a2b06c9f6753f87b097f3ed0fdea7604d"><div class="ttname"><a href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a></div><div class="ttdeci">vector&lt; Player &gt; init_players(const Settings &amp;settings)</div><div class="ttdoc">Initialize the players corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00039">init.cpp:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -71,6 +71,9 @@ $(function() {
 <div class="title">init.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file defines an initialization function.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="settings_8h_source.html">settings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="state_8h_source.html">state.h</a>&quot;</code><br />
@@ -80,9 +83,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab6156b9ef17e2921a2e5406a6de579ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structState.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="init_8h.html#ab6156b9ef17e2921a2e5406a6de579ff">init_state</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings)</td></tr>
+<tr class="memdesc:ab6156b9ef17e2921a2e5406a6de579ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the starting state corresponding to the given settings.  <a href="init_8h.html#ab6156b9ef17e2921a2e5406a6de579ff">More...</a><br /></td></tr>
 <tr class="separator:ab6156b9ef17e2921a2e5406a6de579ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines an initialization function. </p>
+
+<p class="definition">Definition in file <a class="el" href="init_8h_source.html">init.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ab6156b9ef17e2921a2e5406a6de579ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6156b9ef17e2921a2e5406a6de579ff">&#9670;&nbsp;</a></span>init_state()</h2>
 
@@ -99,20 +107,26 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="init_8cpp_source.html#l00028">28</a> of file <a class="el" href="init_8cpp_source.html">init.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vector&lt;Card&gt; cards = <a class="code" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a>(settings);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    vector&lt;Player&gt; players = <a class="code" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a>(settings);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="structState.html">State</a> state = {0, cards, players};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> state;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<p>Initialize the starting state corresponding to the given settings. </p>
+<p>The cards and players are defined by their respective functions. The zero'th player starts the game (has the first turn).</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8" title="Initialize the cards corresponding to the given settings.">init_cards</a> </dd>
+<dd>
+<a class="el" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d" title="Initialize the players corresponding to the given settings.">init_players</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="init_8cpp_source.html#l00059">59</a> of file <a class="el" href="init_8cpp_source.html">init.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    vector&lt;Card&gt; cards = <a class="code" href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a>(settings);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    vector&lt;Player&gt; players = <a class="code" href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a>(settings);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structState.html">State</a> state = {0, cards, players};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> state;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00017">state.h:17</a></div></div>
-<div class="ttc" id="ainit_8cpp_html_a36220fea23214cf9540b53a321e3a5d8"><div class="ttname"><a href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a></div><div class="ttdeci">vector&lt; Card &gt; init_cards(const Settings &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00007">init.cpp:7</a></div></div>
-<div class="ttc" id="ainit_8cpp_html_a2b06c9f6753f87b097f3ed0fdea7604d"><div class="ttname"><a href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a></div><div class="ttdeci">vector&lt; Player &gt; init_players(const Settings &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00017">init.cpp:17</a></div></div>
+<div class="ttc" id="ainit_8cpp_html_a36220fea23214cf9540b53a321e3a5d8"><div class="ttname"><a href="init_8cpp.html#a36220fea23214cf9540b53a321e3a5d8">init_cards</a></div><div class="ttdeci">vector&lt; Card &gt; init_cards(const Settings &amp;settings)</div><div class="ttdoc">Initialize the cards corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00020">init.cpp:20</a></div></div>
+<div class="ttc" id="ainit_8cpp_html_a2b06c9f6753f87b097f3ed0fdea7604d"><div class="ttname"><a href="init_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d">init_players</a></div><div class="ttdeci">vector&lt; Player &gt; init_players(const Settings &amp;settings)</div><div class="ttdoc">Initialize the players corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="init_8cpp_source.html#l00039">init.cpp:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

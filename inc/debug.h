@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * \brief This file defines print operators for custom structs.
+ * @brief This file defines print operators for custom structs.
  * These are useful for debugging purposes.
  */
 
