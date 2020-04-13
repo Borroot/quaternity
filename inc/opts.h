@@ -3,10 +3,6 @@
 
 #include "settings.h"
 
-using namespace std;
-
-Settings options(int argc, char **argv);
-void usage(char **argv);
-bool valid(Settings &settings);
+Settings options(const int argc, const char **argv);
 
 #endif

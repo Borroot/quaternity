@@ -7,14 +7,58 @@
 
 using namespace std;
 
-Settings options(int argc, char **argv)
+void usage(const char **argv)
+{
+	cerr
+		<< "Usage: " << argv[0] << " [OPTIONS]"             << endl
+		                                                    << endl
+		<< "  A flexible engine for imaginary quartet!"     << endl
+		                                                    << endl
+		<< "Note:"                                          << endl
+		<< "  To ensure an equal distribution of the cards" << endl
+		<< "  we enforce: (n * s) mod p == 0."              << endl
+		                                                    << endl
+		<< "Options:"                                       << endl
+		<< "  -s [int]    Size of one set.   [default: "    << DEFAULT_SET_SIZE    << "]" << endl
+		<< "  -n [int]    Number of sets.    [default: "    << DEFAULT_NUM_SETS    << "]" << endl
+		<< "  -p [int]    Number of players. [default: "    << DEFAULT_NUM_PLAYERS << "]" << endl
+		<< "  -h          Show this help and exit."         << endl;
+
+}
+
+bool valid(const Settings &settings, const char **argv)
+{
+	if (settings.SET_SIZE < 1) {
+		cerr << argv[0] << ": the size of one set has to be at least one" << endl;
+		return false;
+	}
+
+	if (settings.NUM_SETS < 1) {
+		cerr << argv[0] << ": the number of sets has to be at least one" << endl;
+		return false;
+	}
+
+	if (settings.NUM_PLAYERS < 2) {
+		cerr << argv[0] << ": the number of players has to be at least two" << endl;
+		return false;
+	}
+
+	if ((settings.NUM_SETS * settings.SET_SIZE) % settings.NUM_PLAYERS != 0) {
+		cerr << argv[0] << ": enforces (n * s) mod p == 0" << endl;
+		return false;
+	}
+
+	return true;
+}
+
+Settings options(const int argc, const char **argv)
 {
 	int SET_SIZE = DEFAULT_SET_SIZE;
 	int NUM_SETS = DEFAULT_NUM_SETS;
 	int NUM_PLAYERS = DEFAULT_NUM_PLAYERS;
 
 	int opt;
-	while ((opt = getopt(argc, argv, "s:n:p:h")) != -1) {
+	while ((opt = getopt(argc, (char* const*)argv, "s:n:p:h")) != -1) {
 		switch (opt) {
 			case 's':
 				SET_SIZE = atoi(optarg);
@@ -35,37 +79,9 @@ Settings options(int argc, char **argv)
 	}
 
 	Settings settings = {SET_SIZE, NUM_SETS, NUM_PLAYERS};
-	if (!valid(settings)) {
-		cerr << argv[0] << ": enforces (n * s) mod p == 0" << endl;
+	if (!valid(settings, argv)) {
 		usage(argv);
 		exit(EXIT_FAILURE);
 	}
 	return settings;
-}
-
-void usage(char **argv)
-{
-	cerr
-		<< "Usage: " << argv[0] << " [OPTIONS]"             << endl
-		                                                    << endl
-		<< "  A flexible engine for imaginary quartet!"     << endl
-		                                                    << endl
-		<< "Note:"                                          << endl
-		<< "  To ensure an equal distribution of the cards" << endl
-		<< "  we enforce: (n * s) mod p == 0."              << endl
-		                                                    << endl
-		<< "Options:"                                       << endl
-		<< "  -s [int]    Size of one set.   [default: "    << DEFAULT_SET_SIZE    << "]" << endl
-		<< "  -n [int]    Number of sets.    [default: "    << DEFAULT_NUM_SETS    << "]" << endl
-		<< "  -p [int]    Number of players. [default: "    << DEFAULT_NUM_PLAYERS << "]" << endl
-		<< "  -h          Show this help and exit."         << endl;
-
-}
-
-bool valid(Settings &settings)
-{
-	if ((settings.NUM_SETS * settings.SET_SIZE) % settings.NUM_PLAYERS == 0) {
-		return true;
-	}
-	return false;
 }

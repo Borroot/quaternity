@@ -1,16 +1,10 @@
 #ifndef INPUT_H
 # define INPUT_H
 
-#include <iostream>
-#include <string>
+#include "round.h"
+#include "settings.h"
 
-template <typename T>
-T ask(string question)
-{
-	cout << question << endl << "> ";
-	T answer;
-	cin >> answer;
-	return answer;
-}
+Question ask_question();
+Answer ask_answer();
 
 #endif
