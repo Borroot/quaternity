@@ -19,7 +19,7 @@ vector<Player> init_players(const Settings &settings)
 	vector<Player> players;
 	for (int i = 0; i < settings.NUM_PLAYERS; i++) {
 		Player player = {(settings.NUM_SETS * settings.SET_SIZE) / settings.NUM_PLAYERS,
-		                  vector<bool>(settings.NUM_SETS, false)};
+		                  vector<int>(settings.NUM_SETS, 0)};
 		players.push_back(player);
 	}
 	return players;

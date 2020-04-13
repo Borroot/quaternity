@@ -10,8 +10,8 @@ struct Card {
 };
 
 struct Player {
-	int num_cards;         // The number of cards this player has.
-	vector<bool> sets;     // The sets of which this player has at least one card.
+	int num_cards;         // The number of cards the player has.
+	vector<int> sets;      // The number of cards the player has from a certain set.
 };
 
 struct State {
