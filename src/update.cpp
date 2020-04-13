@@ -17,6 +17,8 @@ void update_state(const Settings &settings, State &state, const Question &questi
 		state.players[question.player].sets[question.set] = false;
 		state.cards[question.set * settings.SET_SIZE + question.card].players = vector<bool>(settings.NUM_PLAYERS, false);
 		state.cards[question.set * settings.SET_SIZE + question.card].players[state.onturn] = true;
+		state.players[state.onturn].num_cards++;
+		state.players[question.player].num_cards--;
 	} else {
 		state.cards[question.set * settings.SET_SIZE + question.card].players[question.player] = false;
 		state.onturn = question.player;
