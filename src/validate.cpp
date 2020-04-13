@@ -39,8 +39,25 @@ bool valid_question(const Settings &settings, const State &state, const Question
 	return true;
 }
 
+bool valid_cards_minimum_one(const Settings &settings, const State &state)
+{
+	// Check if every card can at least be assigned to one player.
+	for (int card = 0; card < (int)state.cards.size(); card++) {
+		int count = 0;
+		for (int player = 0; player < settings.NUM_PLAYERS; player++) {
+			if (!state.cards[card].players[player]) {
+				count++;
+			}
+		}
+		if (count >= settings.NUM_PLAYERS) {
+			cerr << "Your answer is invalid." << endl;
+			return false;
+		}
+	}
+	return true;
+}
+
 bool valid_state(const Settings &settings, const State &state)
 {
-	// return if there exists a valid assignment
-	return true;
+	return valid_cards_minimum_one(settings, state);
 }
