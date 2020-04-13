@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Quaternity: inc/validate.h File Reference</title>
+<title>Quaternity: src/validate.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,40 +61,48 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">validate.h File Reference</div>  </div>
+<div class="title">validate.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="round_8h_source.html">round.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="round_8h_source.html">round.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="settings_8h_source.html">settings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="state_8h_source.html">state.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="validate_8h_source.html">validate.h</a>&quot;</code><br />
 </div>
-<p><a href="validate_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="validate_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5751e76a8a3ecb7d0bc1b8dfa888f7a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8h.html#a5751e76a8a3ecb7d0bc1b8dfa888f7a7">valid_question</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state, const <a class="el" href="structQuestion.html">Question</a> &amp;question)</td></tr>
+<tr class="memitem:a5751e76a8a3ecb7d0bc1b8dfa888f7a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a5751e76a8a3ecb7d0bc1b8dfa888f7a7">valid_question</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state, const <a class="el" href="structQuestion.html">Question</a> &amp;question)</td></tr>
 <tr class="separator:a5751e76a8a3ecb7d0bc1b8dfa888f7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e12ba62fd3b3050bf284205cde1acc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8h.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state, const <a class="el" href="structQuestion.html">Question</a> &amp;question, const <a class="el" href="round_8h.html#a77da2cb3c716e1673bbfe93f6d167a28">Answer</a> &amp;answer)</td></tr>
-<tr class="separator:a5e12ba62fd3b3050bf284205cde1acc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417b2b76cc3bd1c2411fc223bbec4391"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8h.html#a417b2b76cc3bd1c2411fc223bbec4391">valid_state</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
+<tr class="memitem:a9a7268d0daf41a01eeba4db09696dbc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
+<tr class="separator:a9a7268d0daf41a01eeba4db09696dbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40904d5898710806d0ea1d273af0dcda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a40904d5898710806d0ea1d273af0dcda">valid_players</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
+<tr class="separator:a40904d5898710806d0ea1d273af0dcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5c7d089411f33bb4cecbff440399fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
+<tr class="separator:a7d5c7d089411f33bb4cecbff440399fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417b2b76cc3bd1c2411fc223bbec4391"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a417b2b76cc3bd1c2411fc223bbec4391">valid_state</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
 <tr class="separator:a417b2b76cc3bd1c2411fc223bbec4391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a5e12ba62fd3b3050bf284205cde1acc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e12ba62fd3b3050bf284205cde1acc6">&#9670;&nbsp;</a></span>valid_answer()</h2>
+<a id="a7d5c7d089411f33bb4cecbff440399fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5c7d089411f33bb4cecbff440399fa">&#9670;&nbsp;</a></span>dfs()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool valid_answer </td>
+          <td class="memname">bool dfs </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structSettings.html">Settings</a> &amp;&#160;</td>
           <td class="paramname"><em>settings</em>, </td>
@@ -103,19 +111,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structState.html">State</a> &amp;&#160;</td>
-          <td class="paramname"><em>state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structQuestion.html">Question</a> &amp;&#160;</td>
-          <td class="paramname"><em>question</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="round_8h.html#a77da2cb3c716e1673bbfe93f6d167a28">Answer</a> &amp;&#160;</td>
-          <td class="paramname"><em>answer</em>&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -125,6 +121,103 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00077">77</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9a7268d0daf41a01eeba4db09696dbc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7268d0daf41a01eeba4db09696dbc5">&#9670;&nbsp;</a></span>valid_cards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool valid_cards </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSettings.html">Settings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structState.html">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00042">42</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// verify there are no cards with [0,0,0,..,0]</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> card = 0; card &lt; (int)state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>.size(); card++) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (!state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>[card].players[player]) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                count++;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (count &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot;Your answer is invalid.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a40904d5898710806d0ea1d273af0dcda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40904d5898710806d0ea1d273af0dcda">&#9670;&nbsp;</a></span>valid_players()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool valid_players </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSettings.html">Settings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structState.html">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00060">60</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// verify there is no more number of cards for a set &gt; SET_SIZE</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    vector&lt;int&gt; sets = vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> set = 0; set &lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; set++) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            sets[set] += state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>[player].sets[set];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> set = 0; set &lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; set++) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (sets[set] &gt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5751e76a8a3ecb7d0bc1b8dfa888f7a7"></a>
@@ -217,10 +310,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00086">86</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a>(settings, state) &amp;&amp; <a class="code" href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a>(settings, state);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00083">83</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a>(settings, state) &amp;&amp; <a class="code" href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a>(settings, state);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,8 +325,9 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructQuestion_html_a8732aedb9654217fbfe736732c2e4d4b"><div class="ttname"><a href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">Question::player</a></div><div class="ttdeci">int player</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00009">round.h:9</a></div></div>
 <div class="ttc" id="astructQuestion_html_a971bbc717d8890226d187afde6e42756"><div class="ttname"><a href="structQuestion.html#a971bbc717d8890226d187afde6e42756">Question::card</a></div><div class="ttdeci">int card</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00011">round.h:11</a></div></div>
 <div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00010">settings.h:10</a></div></div>
+<div class="ttc" id="astructState_html_a6e63eed6ae62ea8265ee145e740627e0"><div class="ttname"><a href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">State::cards</a></div><div class="ttdeci">vector&lt; Card &gt; cards</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00019">state.h:19</a></div></div>
 <div class="ttc" id="avalidate_8cpp_html_a9a7268d0daf41a01eeba4db09696dbc5"><div class="ttname"><a href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a></div><div class="ttdeci">bool valid_cards(const Settings &amp;settings, const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00042">validate.cpp:42</a></div></div>
-<div class="ttc" id="avalidate_8cpp_html_a7d5c7d089411f33bb4cecbff440399fa"><div class="ttname"><a href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a></div><div class="ttdeci">bool dfs(const Settings &amp;settings, const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00080">validate.cpp:80</a></div></div>
+<div class="ttc" id="avalidate_8cpp_html_a7d5c7d089411f33bb4cecbff440399fa"><div class="ttname"><a href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a></div><div class="ttdeci">bool dfs(const Settings &amp;settings, const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00077">validate.cpp:77</a></div></div>
 <div class="ttc" id="astructState_html_a8473e0f33782aa5732beb378a228d383"><div class="ttname"><a href="structState.html#a8473e0f33782aa5732beb378a228d383">State::onturn</a></div><div class="ttdeci">int onturn</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00018">state.h:18</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
