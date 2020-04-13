@@ -1,3 +1,10 @@
+/**
+ * @file
+ *
+ * \brief This file defines print operators for custom structs.
+ * These are useful for debugging purposes.
+ */
+
 #ifndef DEBUG_H
 # define DEBUG_H
 
@@ -10,6 +17,9 @@
 
 using namespace std;
 
+/**
+ * Print the elements of a vector nicely.
+ */
 template <class T>
 ostream &operator<<(ostream &out, const vector<T> &vector)
 {

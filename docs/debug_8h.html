@@ -71,6 +71,9 @@ $(function() {
 <div class="title">debug.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file defines print operators for custom structs. These are useful for debugging purposes.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="round_8h_source.html">round.h</a>&quot;</code><br />
@@ -95,7 +98,11 @@ Functions</h2></td></tr>
 <tr class="memitem:aea28dd273667ec234a5bf0d40779c9d0"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8h.html#aea28dd273667ec234a5bf0d40779c9d0">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="structQuestion.html">Question</a> &amp;question)</td></tr>
 <tr class="separator:aea28dd273667ec234a5bf0d40779c9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines print operators for custom structs. These are useful for debugging purposes. </p>
+
+<p class="definition">Definition in file <a class="el" href="debug_8h_source.html">debug.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae22d1f7ec753f692bd2fea91975c510e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae22d1f7ec753f692bd2fea91975c510e">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/6]</span></h2>
 
@@ -121,12 +128,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print the information of a card struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00011">11</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    out &lt;&lt; card.<a class="code" href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">players</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00021">21</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    out &lt;&lt; card.<a class="code" href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">players</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -155,12 +163,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print the information of a player struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00017">17</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; player.<a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; player.<a class="code" href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">sets</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00030">30</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; player.<a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; player.<a class="code" href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">sets</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,15 +198,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print the information of a question struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00040">40</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Question: &quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;player = &quot;</span> &lt;&lt; question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;set = &quot;</span>    &lt;&lt; question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a>    &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;card = &quot;</span>   &lt;&lt; question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a>   &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00062">62</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Question: &quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;player = &quot;</span> &lt;&lt; question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;set = &quot;</span>    &lt;&lt; question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a>    &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;card = &quot;</span>   &lt;&lt; question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a>   &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,15 +236,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print the information of a settings struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00023">23</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Settings: &quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;set size = &quot;</span>    &lt;&lt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>    &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;num sets = &quot;</span>    &lt;&lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>    &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;num players = &quot;</span> &lt;&lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a> &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00039">39</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Settings: &quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;set size = &quot;</span>    &lt;&lt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>    &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;num sets = &quot;</span>    &lt;&lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>    &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;num players = &quot;</span> &lt;&lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a> &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -263,14 +274,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print the information of a state struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00032">32</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Onturn: &quot;</span>  &lt;&lt; state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a>  &lt;&lt; endl</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;Cards: &quot;</span>   &lt;&lt; state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>   &lt;&lt; endl</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;Players: &quot;</span> &lt;&lt; state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="debug_8cpp_source.html#l00051">51</a> of file <a class="el" href="debug_8cpp_source.html">debug.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Onturn: &quot;</span>  &lt;&lt; state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a>  &lt;&lt; endl</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;Cards: &quot;</span>   &lt;&lt; state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>   &lt;&lt; endl</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;Players: &quot;</span> &lt;&lt; state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,19 +313,20 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print the elements of a vector nicely. </p>
 
-<p class="definition">Definition at line <a class="el" href="debug_8h_source.html#l00014">14</a> of file <a class="el" href="debug_8h_source.html">debug.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)vector.size(); i++) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        out &lt;&lt; vector[i];</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (i &lt; (<span class="keywordtype">int</span>)vector.size() - 1) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="debug_8h_source.html#l00024">24</a> of file <a class="el" href="debug_8h_source.html">debug.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)vector.size(); i++) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        out &lt;&lt; vector[i];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (i &lt; (<span class="keywordtype">int</span>)vector.size() - 1) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
