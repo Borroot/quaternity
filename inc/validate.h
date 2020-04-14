@@ -1,3 +1,10 @@
+/**
+ * @file
+ *
+ * @brief This file defines function headers for functions
+ * that can check if a question or state is valid.
+ */
+
 #ifndef VALIDATE_H
 # define VALIDATE_H
 
@@ -6,7 +13,6 @@
 #include "state.h"
 
 bool valid_question(const Settings &settings, const State &state, const Question &question);
-bool valid_answer(const Settings &settings, const State &state, const Question &question, const Answer &answer);
 bool valid_state(const Settings &settings, const State &state);
 
 #endif

@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	cout << settings;
 	cout << state;
 
-	while (true) {
+	while (true) { // not game over
 		// QUESTION
 		Question question;
 		do {
@@ -43,23 +43,10 @@ int main(int argc, char **argv)
 
 		cout << state;
 
+		// QUARTETS
+
+		// COMMIT STATE
 	}
 
-	// while (!game_over(state)) {
-		// do
-			// get question
-			// update state
-		// while not valid state
-
-		// do
-			// get answer
-			// update state (change onturn)
-		// while not valid state
-
-		// if quartets
-			// update state
-
-		// commit state
-	// }
 	return 0;
 }

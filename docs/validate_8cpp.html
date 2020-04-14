@@ -71,6 +71,9 @@ $(function() {
 <div class="title">validate.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file defines functions which can check if a question or state is valid.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br />
@@ -84,17 +87,24 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5751e76a8a3ecb7d0bc1b8dfa888f7a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a5751e76a8a3ecb7d0bc1b8dfa888f7a7">valid_question</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state, const <a class="el" href="structQuestion.html">Question</a> &amp;question)</td></tr>
+<tr class="memdesc:a5751e76a8a3ecb7d0bc1b8dfa888f7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do easy checks on if the question is valid.  <a href="validate_8cpp.html#a5751e76a8a3ecb7d0bc1b8dfa888f7a7">More...</a><br /></td></tr>
 <tr class="separator:a5751e76a8a3ecb7d0bc1b8dfa888f7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a7268d0daf41a01eeba4db09696dbc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
+<tr class="memdesc:a9a7268d0daf41a01eeba4db09696dbc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if all the cards can be given to at least one player.  <a href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">More...</a><br /></td></tr>
 <tr class="separator:a9a7268d0daf41a01eeba4db09696dbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40904d5898710806d0ea1d273af0dcda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a40904d5898710806d0ea1d273af0dcda">valid_players</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
+<tr class="memdesc:a40904d5898710806d0ea1d273af0dcda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there not more set/category restrictions than there are cards in a set/category.  <a href="validate_8cpp.html#a40904d5898710806d0ea1d273af0dcda">More...</a><br /></td></tr>
 <tr class="separator:a40904d5898710806d0ea1d273af0dcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d5c7d089411f33bb4cecbff440399fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
 <tr class="separator:a7d5c7d089411f33bb4cecbff440399fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a417b2b76cc3bd1c2411fc223bbec4391"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validate_8cpp.html#a417b2b76cc3bd1c2411fc223bbec4391">valid_state</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
 <tr class="separator:a417b2b76cc3bd1c2411fc223bbec4391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines functions which can check if a question or state is valid. </p>
+
+<p class="definition">Definition in file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a7d5c7d089411f33bb4cecbff440399fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d5c7d089411f33bb4cecbff440399fa">&#9670;&nbsp;</a></span>dfs()</h2>
 
@@ -121,11 +131,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00077">77</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00106">106</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -155,23 +165,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00042">42</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// verify there are no cards with [0,0,0,..,0]</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> card = 0; card &lt; (int)state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>.size(); card++) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (!state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>[card].players[player]) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                count++;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (count &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot;Your answer is invalid.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<p>Check if all the cards can be given to at least one player. </p>
+<p>In other words check if for every card it holds that the players vector does not equal [0, ...,0]. Because then the card can not be distributed and we immediatly know that the state is invalid. </p>
+
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00064">64</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> card = 0; card &lt; (int)state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>.size(); card++) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (!state.<a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>[card].players[player]) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                count++;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (count &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot;Your answer is invalid.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,22 +213,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00060">60</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// verify there is no more number of cards for a set &gt; SET_SIZE</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    vector&lt;int&gt; sets = vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> set = 0; set &lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; set++) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            sets[set] += state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>[player].sets[set];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> set = 0; set &lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; set++) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (sets[set] &gt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<p>Check if there not more set/category restrictions than there are cards in a set/category. </p>
+<p>Thus if player 0 needs to have 2 cards of set/category 0 and player 1 needs to have 3 cards of this same set/category, then if SET_SIZE is smaller then 5 we immediatly know that the state is invalid. </p>
+
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00090">90</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    vector&lt;int&gt; sets = vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> set = 0; set &lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; set++) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            sets[set] += state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>[player].sets[set];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> set = 0; set &lt; settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; set++) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (sets[set] &gt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -252,35 +266,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00012">12</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Player is out of bounds.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &gt;= settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Set is out of bounds.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &gt;= settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Card is out of bounds.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a> == question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;You cannot ask yourself a question.&quot;</span> &lt;&lt; endl;</div>
+<p>Do easy checks on if the question is valid. </p>
+<p>Check if the values (player, set, card) are all within the bounds they can be. Additionally check if the player whom a question is asked has at least one card and check that the question is not pointed towards oneself. </p>
+
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00027">27</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Player is out of bounds.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>[question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>].num_cards &lt; 1) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Player &quot;</span> &lt;&lt; question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt;&lt; <span class="stringliteral">&quot; does not have any cards.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &gt;= settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Set is out of bounds.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &gt;= settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Card is out of bounds.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a> == question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;You cannot ask yourself a question.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>[question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>].num_cards &lt; 1) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Player &quot;</span> &lt;&lt; question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt;&lt; <span class="stringliteral">&quot; does not have any cards.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -310,24 +327,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00083">83</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a>(settings, state) &amp;&amp; <a class="code" href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a>(settings, state);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00112">112</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a>(settings, state) &amp;&amp; <a class="code" href="validate_8cpp.html#a40904d5898710806d0ea1d273af0dcda">valid_players</a>(settings, state) &amp;&amp; <a class="code" href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a>(settings, state);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="astructQuestion_html_a5b5a73bf2de32d9b8283dc7a119578fc"><div class="ttname"><a href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">Question::set</a></div><div class="ttdeci">int set</div><div class="ttdoc">The set/category the card which is asked belongs to.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00029">round.h:29</a></div></div>
 <div class="ttc" id="astructSettings_html_a78cf5ed18d69ce74d769a4a9058154c5"><div class="ttname"><a href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">Settings::SET_SIZE</a></div><div class="ttdeci">const int SET_SIZE</div><div class="ttdoc">The size of one set/category, aka the number of cards in one set/category.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00033">settings.h:33</a></div></div>
+<div class="ttc" id="avalidate_8cpp_html_a40904d5898710806d0ea1d273af0dcda"><div class="ttname"><a href="validate_8cpp.html#a40904d5898710806d0ea1d273af0dcda">valid_players</a></div><div class="ttdeci">bool valid_players(const Settings &amp;settings, const State &amp;state)</div><div class="ttdoc">Check if there not more set/category restrictions than there are cards in a set/category.</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00090">validate.cpp:90</a></div></div>
 <div class="ttc" id="astructState_html_a79523852328cce39d41d480e71a16032"><div class="ttname"><a href="structState.html#a79523852328cce39d41d480e71a16032">State::players</a></div><div class="ttdeci">vector&lt; Player &gt; players</div><div class="ttdoc">The information on all the players.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00089">state.h:89</a></div></div>
 <div class="ttc" id="astructSettings_html_a86e8b42ad2fcbb6bb68f2b02b932899a"><div class="ttname"><a href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">Settings::NUM_PLAYERS</a></div><div class="ttdeci">const int NUM_PLAYERS</div><div class="ttdoc">The number of players playing the game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00043">settings.h:43</a></div></div>
 <div class="ttc" id="astructQuestion_html_a8732aedb9654217fbfe736732c2e4d4b"><div class="ttname"><a href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">Question::player</a></div><div class="ttdeci">int player</div><div class="ttdoc">The player the question is asked to.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00024">round.h:24</a></div></div>
 <div class="ttc" id="astructQuestion_html_a971bbc717d8890226d187afde6e42756"><div class="ttname"><a href="structQuestion.html#a971bbc717d8890226d187afde6e42756">Question::card</a></div><div class="ttdeci">int card</div><div class="ttdoc">The card in the set/category which is asked for.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00034">round.h:34</a></div></div>
 <div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdoc">The number of sets/categories.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00038">settings.h:38</a></div></div>
 <div class="ttc" id="astructState_html_a6e63eed6ae62ea8265ee145e740627e0"><div class="ttname"><a href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">State::cards</a></div><div class="ttdeci">vector&lt; Card &gt; cards</div><div class="ttdoc">The information on all the cards.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00082">state.h:82</a></div></div>
-<div class="ttc" id="avalidate_8cpp_html_a9a7268d0daf41a01eeba4db09696dbc5"><div class="ttname"><a href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a></div><div class="ttdeci">bool valid_cards(const Settings &amp;settings, const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00042">validate.cpp:42</a></div></div>
-<div class="ttc" id="avalidate_8cpp_html_a7d5c7d089411f33bb4cecbff440399fa"><div class="ttname"><a href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a></div><div class="ttdeci">bool dfs(const Settings &amp;settings, const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00077">validate.cpp:77</a></div></div>
+<div class="ttc" id="avalidate_8cpp_html_a9a7268d0daf41a01eeba4db09696dbc5"><div class="ttname"><a href="validate_8cpp.html#a9a7268d0daf41a01eeba4db09696dbc5">valid_cards</a></div><div class="ttdeci">bool valid_cards(const Settings &amp;settings, const State &amp;state)</div><div class="ttdoc">Check if all the cards can be given to at least one player.</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00064">validate.cpp:64</a></div></div>
+<div class="ttc" id="avalidate_8cpp_html_a7d5c7d089411f33bb4cecbff440399fa"><div class="ttname"><a href="validate_8cpp.html#a7d5c7d089411f33bb4cecbff440399fa">dfs</a></div><div class="ttdeci">bool dfs(const Settings &amp;settings, const State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00106">validate.cpp:106</a></div></div>
 <div class="ttc" id="astructState_html_a8473e0f33782aa5732beb378a228d383"><div class="ttname"><a href="structState.html#a8473e0f33782aa5732beb378a228d383">State::onturn</a></div><div class="ttdeci">int onturn</div><div class="ttdoc">The player who is on turn.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00068">state.h:68</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
