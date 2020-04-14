@@ -69,39 +69,46 @@ $(function() {
 <div class="title">state.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STATE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"># define STATE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structCard.html">    8</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structCard.html">Card</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">    9</a></span>&#160;    vector&lt;bool&gt; <a class="code" href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">players</a>;  <span class="comment">// The players which could have this card.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structPlayer.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPlayer.html">Player</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">   13</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a>;         <span class="comment">// The number of cards the player has.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">   14</a></span>&#160;    vector&lt;int&gt; <a class="code" href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">sets</a>;      <span class="comment">// The number of cards the player has from a certain set.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structState.html">   17</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structState.html">State</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structState.html#a8473e0f33782aa5732beb378a228d383">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">   19</a></span>&#160;    vector&lt;Card&gt; <a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structState.html#a79523852328cce39d41d480e71a16032">   20</a></span>&#160;    vector&lt;Player&gt; <a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef STATE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"># define STATE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structCard.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structCard.html">Card</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">   32</a></span>&#160;    vector&lt;bool&gt; <a class="code" href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">players</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structPlayer.html">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPlayer.html">Player</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">   43</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">   54</a></span>&#160;    vector&lt;int&gt; <a class="code" href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">sets</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structState.html">   63</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structState.html">State</a> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structState.html#a8473e0f33782aa5732beb378a228d383">   68</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">   82</a></span>&#160;    vector&lt;Card&gt; <a class="code" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structState.html#a79523852328cce39d41d480e71a16032">   89</a></span>&#160;    vector&lt;Player&gt; <a class="code" href="structState.html#a79523852328cce39d41d480e71a16032">players</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructState_html_a79523852328cce39d41d480e71a16032"><div class="ttname"><a href="structState.html#a79523852328cce39d41d480e71a16032">State::players</a></div><div class="ttdeci">vector&lt; Player &gt; players</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00020">state.h:20</a></div></div>
-<div class="ttc" id="astructCard_html"><div class="ttname"><a href="structCard.html">Card</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00008">state.h:8</a></div></div>
-<div class="ttc" id="astructPlayer_html_a0906f479e944d6736dbbc0da55dac76a"><div class="ttname"><a href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">Player::sets</a></div><div class="ttdeci">vector&lt; int &gt; sets</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00014">state.h:14</a></div></div>
-<div class="ttc" id="astructCard_html_ac33a17dba0e20a87ccae0d0f3375f9ed"><div class="ttname"><a href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">Card::players</a></div><div class="ttdeci">vector&lt; bool &gt; players</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00009">state.h:9</a></div></div>
-<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00012">state.h:12</a></div></div>
-<div class="ttc" id="astructState_html_a6e63eed6ae62ea8265ee145e740627e0"><div class="ttname"><a href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">State::cards</a></div><div class="ttdeci">vector&lt; Card &gt; cards</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00019">state.h:19</a></div></div>
-<div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00017">state.h:17</a></div></div>
-<div class="ttc" id="astructPlayer_html_a83bd29acbedad8704d10a21cc81c195a"><div class="ttname"><a href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">Player::num_cards</a></div><div class="ttdeci">int num_cards</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00013">state.h:13</a></div></div>
-<div class="ttc" id="astructState_html_a8473e0f33782aa5732beb378a228d383"><div class="ttname"><a href="structState.html#a8473e0f33782aa5732beb378a228d383">State::onturn</a></div><div class="ttdeci">int onturn</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00018">state.h:18</a></div></div>
+<div class="ttc" id="astructState_html_a79523852328cce39d41d480e71a16032"><div class="ttname"><a href="structState.html#a79523852328cce39d41d480e71a16032">State::players</a></div><div class="ttdeci">vector&lt; Player &gt; players</div><div class="ttdoc">The information on all the players.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00089">state.h:89</a></div></div>
+<div class="ttc" id="astructCard_html"><div class="ttname"><a href="structCard.html">Card</a></div><div class="ttdoc">The information connected to a card.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00022">state.h:22</a></div></div>
+<div class="ttc" id="astructPlayer_html_a0906f479e944d6736dbbc0da55dac76a"><div class="ttname"><a href="structPlayer.html#a0906f479e944d6736dbbc0da55dac76a">Player::sets</a></div><div class="ttdeci">vector&lt; int &gt; sets</div><div class="ttdoc">The number of cards the player at least has from a certain set/category.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00054">state.h:54</a></div></div>
+<div class="ttc" id="astructCard_html_ac33a17dba0e20a87ccae0d0f3375f9ed"><div class="ttname"><a href="structCard.html#ac33a17dba0e20a87ccae0d0f3375f9ed">Card::players</a></div><div class="ttdeci">vector&lt; bool &gt; players</div><div class="ttdoc">The players which could have this card.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00032">state.h:32</a></div></div>
+<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdoc">The information connected to a player.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00038">state.h:38</a></div></div>
+<div class="ttc" id="astructState_html_a6e63eed6ae62ea8265ee145e740627e0"><div class="ttname"><a href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">State::cards</a></div><div class="ttdeci">vector&lt; Card &gt; cards</div><div class="ttdoc">The information on all the cards.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00082">state.h:82</a></div></div>
+<div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdoc">The complete game state.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00063">state.h:63</a></div></div>
+<div class="ttc" id="astructPlayer_html_a83bd29acbedad8704d10a21cc81c195a"><div class="ttname"><a href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">Player::num_cards</a></div><div class="ttdeci">int num_cards</div><div class="ttdoc">The number of cards this player has.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00043">state.h:43</a></div></div>
+<div class="ttc" id="astructState_html_a8473e0f33782aa5732beb378a228d383"><div class="ttname"><a href="structState.html#a8473e0f33782aa5732beb378a228d383">State::onturn</a></div><div class="ttdeci">int onturn</div><div class="ttdoc">The player who is on turn.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00068">state.h:68</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

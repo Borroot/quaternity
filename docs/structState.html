@@ -69,20 +69,28 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The complete game state.  
+ <a href="structState.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="state_8h_source.html">state.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8473e0f33782aa5732beb378a228d383"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a></td></tr>
+<tr class="memdesc:a8473e0f33782aa5732beb378a228d383"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player who is on turn.  <a href="structState.html#a8473e0f33782aa5732beb378a228d383">More...</a><br /></td></tr>
 <tr class="separator:a8473e0f33782aa5732beb378a228d383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e63eed6ae62ea8265ee145e740627e0"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a></td></tr>
+<tr class="memdesc:a6e63eed6ae62ea8265ee145e740627e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the cards.  <a href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">More...</a><br /></td></tr>
 <tr class="separator:a6e63eed6ae62ea8265ee145e740627e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79523852328cce39d41d480e71a16032"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a79523852328cce39d41d480e71a16032">players</a></td></tr>
+<tr class="memdesc:a79523852328cce39d41d480e71a16032"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the players.  <a href="structState.html#a79523852328cce39d41d480e71a16032">More...</a><br /></td></tr>
 <tr class="separator:a79523852328cce39d41d480e71a16032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00017">17</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<div class="textblock"><p>The complete game state. </p>
+<p>This struct contains all the information of the game state at a specific moment in time. </p>
+
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00063">63</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a6e63eed6ae62ea8265ee145e740627e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e63eed6ae62ea8265ee145e740627e0">&#9670;&nbsp;</a></span>cards</h2>
@@ -96,7 +104,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00019">19</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p>The information on all the cards. </p>
+<p>This vector also contains information on which card is in what category and which card they are with respect to their category. Consider the following example [card0, ..., card7] and we have a SET_SIZE of 4 and thus a NUM_SETS of 2 then the cards [card0, ..., card3] belong to set/category 0 and [card4, ..., card7] belong to set/category 1. In these examples card4 will be card 0 with respect to its own set/category and card7 will be card 3. </p>
+
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00082">82</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>
@@ -112,7 +123,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00018">18</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p>The player who is on turn. </p>
+
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00068">68</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>
@@ -128,7 +141,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00020">20</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p>The information on all the players. </p>
+<p>This is where it is defined who is player 0, 1, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00089">89</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>
