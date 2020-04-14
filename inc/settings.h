@@ -28,7 +28,7 @@
 struct Settings {
 
 	/**
-	 * @brief The size of one set/category, aka the number of cards in one size/category.
+	 * @brief The size of one set/category, aka the number of cards in one set/category.
 	 */
 	const int SET_SIZE;
 
