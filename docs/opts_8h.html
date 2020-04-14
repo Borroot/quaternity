@@ -71,6 +71,9 @@ $(function() {
 <div class="title">opts.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file defines the command line argument parsing function header.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="settings_8h_source.html">settings.h</a>&quot;</code><br />
 </div>
 <p><a href="opts_8h_source.html">Go to the source code of this file.</a></p>
@@ -78,9 +81,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae77264e066e8878705fd9aabd348118b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSettings.html">Settings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="opts_8h.html#ae77264e066e8878705fd9aabd348118b">options</a> (const int argc, const char **argv)</td></tr>
+<tr class="memdesc:ae77264e066e8878705fd9aabd348118b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the command line arguments and generate the settings from these.  <a href="opts_8h.html#ae77264e066e8878705fd9aabd348118b">More...</a><br /></td></tr>
 <tr class="separator:ae77264e066e8878705fd9aabd348118b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines the command line argument parsing function header. </p>
+
+<p class="definition">Definition in file <a class="el" href="opts_8h_source.html">opts.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae77264e066e8878705fd9aabd348118b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae77264e066e8878705fd9aabd348118b">&#9670;&nbsp;</a></span>options()</h2>
 
@@ -107,46 +115,56 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="opts_8cpp_source.html#l00054">54</a> of file <a class="el" href="opts_8cpp_source.html">opts.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> SET_SIZE = <a class="code" href="settings_8h.html#ae267444f08814e0c8e054c2fad443b6a">DEFAULT_SET_SIZE</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> NUM_SETS = <a class="code" href="settings_8h.html#a7da1793266d2c35715aa44177875918c">DEFAULT_NUM_SETS</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> NUM_PLAYERS = <a class="code" href="settings_8h.html#a3aae2d1014ac6d43b78f6f82c0f6e807">DEFAULT_NUM_PLAYERS</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> opt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">while</span> ((opt = getopt(argc, (<span class="keywordtype">char</span>* <span class="keyword">const</span>*)argv, <span class="stringliteral">&quot;s:n:p:h&quot;</span>)) != -1) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">switch</span> (opt) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                SET_SIZE = atoi(optarg);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                NUM_SETS = atoi(optarg);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                NUM_PLAYERS = atoi(optarg);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a>(argv);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                exit(EXIT_SUCCESS);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">default</span>:  <span class="comment">// &#39;?&#39;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a>(argv);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structSettings.html">Settings</a> settings = {SET_SIZE, NUM_SETS, NUM_PLAYERS};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="opts_8cpp.html#a6dc45e9081181c08d7044322e89a1565">valid</a>(settings, argv)) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a>(argv);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> settings;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<p>Parse the command line arguments and generate the settings from these. </p>
+<p>This function parses the command line arguments and generates the corresponding settings. If no argument is given for a specific value then the default value will be used.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Number of command line arguments. </td></tr>
+    <tr><td class="paramname">argv</td><td>Command line arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="opts_8cpp_source.html#l00090">90</a> of file <a class="el" href="opts_8cpp_source.html">opts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> SET_SIZE = <a class="code" href="settings_8h.html#ae267444f08814e0c8e054c2fad443b6a">DEFAULT_SET_SIZE</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> NUM_SETS = <a class="code" href="settings_8h.html#a7da1793266d2c35715aa44177875918c">DEFAULT_NUM_SETS</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> NUM_PLAYERS = <a class="code" href="settings_8h.html#a3aae2d1014ac6d43b78f6f82c0f6e807">DEFAULT_NUM_PLAYERS</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> opt;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">while</span> ((opt = getopt(argc, (<span class="keywordtype">char</span>* <span class="keyword">const</span>*)argv, <span class="stringliteral">&quot;s:n:p:h&quot;</span>)) != -1) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">switch</span> (opt) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                SET_SIZE = atoi(optarg);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                NUM_SETS = atoi(optarg);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                NUM_PLAYERS = atoi(optarg);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a>(argv);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                exit(EXIT_SUCCESS);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">default</span>:  <span class="comment">// &#39;?&#39;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <a class="code" href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a>(argv);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="structSettings.html">Settings</a> settings = {SET_SIZE, NUM_SETS, NUM_PLAYERS};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="opts_8cpp.html#a6dc45e9081181c08d7044322e89a1565">valid</a>(settings, argv)) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a>(argv);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> settings;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aopts_8cpp_html_a908717877c0007ebbe891334c75991ec"><div class="ttname"><a href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a></div><div class="ttdeci">void usage(const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="opts_8cpp_source.html#l00010">opts.cpp:10</a></div></div>
-<div class="ttc" id="aopts_8cpp_html_a6dc45e9081181c08d7044322e89a1565"><div class="ttname"><a href="opts_8cpp.html#a6dc45e9081181c08d7044322e89a1565">valid</a></div><div class="ttdeci">bool valid(const Settings &amp;settings, const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="opts_8cpp_source.html#l00029">opts.cpp:29</a></div></div>
+<div class="ttc" id="aopts_8cpp_html_a908717877c0007ebbe891334c75991ec"><div class="ttname"><a href="opts_8cpp.html#a908717877c0007ebbe891334c75991ec">usage</a></div><div class="ttdeci">void usage(const char **argv)</div><div class="ttdoc">Print the usage information for this program on the screen.</div><div class="ttdef"><b>Definition:</b> <a href="opts_8cpp_source.html#l00023">opts.cpp:23</a></div></div>
+<div class="ttc" id="aopts_8cpp_html_a6dc45e9081181c08d7044322e89a1565"><div class="ttname"><a href="opts_8cpp.html#a6dc45e9081181c08d7044322e89a1565">valid</a></div><div class="ttdeci">bool valid(const Settings &amp;settings, const char **argv)</div><div class="ttdoc">Validate the settings given.</div><div class="ttdef"><b>Definition:</b> <a href="opts_8cpp_source.html#l00053">opts.cpp:53</a></div></div>
 <div class="ttc" id="asettings_8h_html_a3aae2d1014ac6d43b78f6f82c0f6e807"><div class="ttname"><a href="settings_8h.html#a3aae2d1014ac6d43b78f6f82c0f6e807">DEFAULT_NUM_PLAYERS</a></div><div class="ttdeci">#define DEFAULT_NUM_PLAYERS</div><div class="ttdoc">The default value for NUM_PLAYERS.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00023">settings.h:23</a></div></div>
 <div class="ttc" id="astructSettings_html"><div class="ttname"><a href="structSettings.html">Settings</a></div><div class="ttdoc">The settings which characterize a game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00028">settings.h:28</a></div></div>
 <div class="ttc" id="asettings_8h_html_a7da1793266d2c35715aa44177875918c"><div class="ttname"><a href="settings_8h.html#a7da1793266d2c35715aa44177875918c">DEFAULT_NUM_SETS</a></div><div class="ttdeci">#define DEFAULT_NUM_SETS</div><div class="ttdoc">The default value for NUM_SETS.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00018">settings.h:18</a></div></div>

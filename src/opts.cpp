@@ -1,3 +1,10 @@
+/**
+ * @file
+ *
+ * @brief This file defines the command line argument parsing
+ * function and some helper functions.
+ */
+
 #include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
@@ -7,6 +14,12 @@
 
 using namespace std;
 
+/**
+ * @brief Print the usage information for this program
+ * on the screen.
+ *
+ * @param argv Command line arguments.
+ */
 void usage(const char **argv)
 {
 	cerr
@@ -26,6 +39,17 @@ void usage(const char **argv)
 
 }
 
+/**
+ * @brief Validate the settings given.
+ *
+ * This function checks if all of the settings have
+ * their minimum value: 1 for SET_SIZE (s), 1 for NUM_SETS (n)
+ * and 2 for NUM_PLAYERS (p). It also checks if the condition
+ * `(n * s) mod p == 0` holds. This condition is necessary to
+ * allow an equal distribution of the cards.
+ *
+ * @param argv Command line arguments.
+ */
 bool valid(const Settings &settings, const char **argv)
 {
 	if (settings.SET_SIZE < 1) {
@@ -51,6 +75,18 @@ bool valid(const Settings &settings, const char **argv)
 	return true;
 }
 
+/**
+ * @brief Parse the command line arguments and generate
+ * the settings from these.
+ *
+ * This function parses the command line arguments and
+ * generates the corresponding settings. If no argument
+ * is given for a specific value then the default value
+ * will be used.
+ *
+ * @param argc Number of command line arguments.
+ * @param argv Command line arguments.
+ */
 Settings options(const int argc, const char **argv)
 {
 	int SET_SIZE = DEFAULT_SET_SIZE;
