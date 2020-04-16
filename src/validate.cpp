@@ -79,11 +79,11 @@ bool valid_cards(const Settings &settings, const State &state)
 }
 
 /**
- * @brief Check if there not more set/category restrictions
- * than there are cards in a set/category.
+ * @brief Check if there not more set restrictions
+ * than there are cards in a set.
  *
- * Thus if player 0 needs to have 2 cards of set/category 0
- * and player 1 needs to have 3 cards of this same set/category,
+ * Thus if player 0 needs to have 2 cards of set 0
+ * and player 1 needs to have 3 cards of this same set,
  * then if SET_SIZE is smaller then 5 we immediatly know that
  * the state is invalid.
  */
@@ -103,7 +103,7 @@ bool valid_players(const Settings &settings, const State &state)
 	return true;
 }
 
-bool dfs(const Settings &settings, State state, vector<int> unassigned)
+bool dfs(const Settings &settings, State state)//, vector<int> unassigned)
 {
 	// if unassigned is empty
 	//   return true

@@ -14,7 +14,7 @@ using namespace std;
 
 /**
  * @brief A question asked by a player. The player asks another
- * player for a specific card (from a category).
+ * player for a specific card from a certain set.
  */
 struct Question {
 
@@ -24,12 +24,12 @@ struct Question {
 	int player;
 
 	/**
-	 * @brief The set/category the card which is asked belongs to.
+	 * @brief The set the card which is asked belongs to.
 	 */
 	int set;
 
 	/**
-	 * @brief The card in the set/category which is asked for.
+	 * @brief The card in the set which is asked for.
 	 */
 	int card;
 };

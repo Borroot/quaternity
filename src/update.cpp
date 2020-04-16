@@ -8,7 +8,7 @@
 using namespace std;
 
 void update_state(const Settings &settings, State &state, const Question &question) {
-	// update the category restrictions
+	// update the set restrictions
 	state.players[state.onturn].sets[question.set] += state.players[state.onturn].sets[question.set] == 0 ? 1 : 0;
 
 	// update the possibly player a card can be
@@ -17,7 +17,7 @@ void update_state(const Settings &settings, State &state, const Question &questi
 
 void update_state(const Settings &settings, State &state, const Question &question, const Answer &answer) {
 	if (answer) {
-		// update the category restrictions
+		// update the set restrictions
 		state.players[state.onturn].sets[question.set] += 1;
 		state.players[question.player].sets[question.set] -= state.players[question.player].sets[question.set] == 0 ? 0 : 1;
 

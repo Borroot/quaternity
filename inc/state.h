@@ -44,12 +44,12 @@ struct Player {
 
 	/**
 	 * @brief The number of cards the player at least
-	 * has from a certain set/category.
+	 * has from a certain set.
 	 *
 	 * To give an example, [0,3,1] means that this player
-	 * has at least 0 cards from set/category 0, it has
-	 * at least 3 cards from set/category 1 and it has at
-	 * least 1 card from set/category 2.
+	 * has at least 0 cards from set 0, it has
+	 * at least 3 cards from set 1 and it has at
+	 * least 1 card from set 2.
 	 */
 	vector<int> sets;
 };
@@ -71,13 +71,13 @@ struct State {
 	 * @brief The information on all the cards.
 	 *
 	 * This vector also contains information on which card
-	 * is in what category and which card they are with
-	 * respect to their category. Consider the following
+	 * is in what set and which card they are with
+	 * respect to their set. Consider the following
 	 * example [card0, ..., card7] and we have a SET_SIZE
 	 * of 4 and thus a NUM_SETS of 2 then the cards [card0, ..., card3]
-	 * belong to set/category 0 and [card4, ..., card7] belong to
-	 * set/category 1. In these examples card4 will be card 0 with
-	 * respect to its own set/category and card7 will be card 3.
+	 * belong to set 0 and [card4, ..., card7] belong to
+	 * set 1. In these examples card4 will be card 0 with
+	 * respect to its own set and card7 will be card 3.
 	 */
 	vector<Card> cards;
 

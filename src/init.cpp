@@ -33,8 +33,7 @@ vector<Card> init_cards(const Settings &settings)
  * The cards are equally distributed among the players which means that
  * every player will start with `(NUM_SETS * SET_SIZE) / NUM_PLAYERS`
  * amount of cards. They further have the sets vector initialized to all
- * zeros because they do not need to have any specific set (category) at
- * the start.
+ * zeros because they do not need to have any specific set at the start.
  */
 vector<Player> init_players(const Settings &settings)
 {
