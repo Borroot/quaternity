@@ -39,9 +39,9 @@ ostream &operator<<(ostream &out, const Player &player)
 ostream &operator<<(ostream &out, const Settings &settings)
 {
 	out << "Settings: "
-	    << "set size = "    << settings.SET_SIZE    << ", "
-	    << "num sets = "    << settings.NUM_SETS    << ", "
-	    << "num players = " << settings.NUM_PLAYERS << "." << endl;
+		<< "set size = "    << settings.SET_SIZE    << ", "
+		<< "num sets = "    << settings.NUM_SETS    << ", "
+		<< "num players = " << settings.NUM_PLAYERS << "." << endl;
 	return out;
 }
 

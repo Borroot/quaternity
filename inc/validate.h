@@ -1,8 +1,8 @@
 /**
  * @file
  *
- * @brief This file defines function headers for functions
- * that can check if a question or state is valid.
+ * @brief This file defines function headers for functions that can check if a
+ * question or state is valid.
  */
 
 #ifndef VALIDATE_H

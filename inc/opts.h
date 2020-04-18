@@ -1,8 +1,7 @@
 /**
  * @file
  *
- * @brief This file defines the command line argument parsing
- * function header.
+ * @brief This file defines the command line argument parsing function header.
  */
 
 #ifndef OPTS_H

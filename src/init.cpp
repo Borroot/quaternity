@@ -13,9 +13,9 @@
 /**
  * @brief Initialize the cards corresponding to the given settings.
  *
- * The players vector for every card will be initilialized to all true,
- * because at the start every player could have that card. There are a
- * total of `SET_SIZE * NUM_SETS` cards which will be generated.
+ * The players vector for every card will be initilialized to all true, because
+ * at the start every player could have that card. There are a total of
+ * `SET_SIZE * NUM_SETS` cards which will be generated.
  */
 vector<Card> init_cards(const Settings &settings)
 {
@@ -30,10 +30,10 @@ vector<Card> init_cards(const Settings &settings)
 /**
  * @brief Initialize the players corresponding to the given settings.
  *
- * The cards are equally distributed among the players which means that
- * every player will start with `(NUM_SETS * SET_SIZE) / NUM_PLAYERS`
- * amount of cards. They further have the sets vector initialized to all
- * zeros because they do not need to have any specific set at the start.
+ * The cards are equally distributed among the players which means that every
+ * player will start with `(NUM_SETS * SET_SIZE) / NUM_PLAYERS` amount of
+ * cards. They further have the sets vector initialized to all zeros because
+ * they do not need to have any specific set at the start.
  */
 vector<Player> init_players(const Settings &settings)
 {
@@ -49,8 +49,8 @@ vector<Player> init_players(const Settings &settings)
 /**
  * @brief Initialize the starting state corresponding to the given settings.
  *
- * The cards and players are defined by their respective functions. The
- * zero'th player starts the game (has the first turn).
+ * The cards and players are defined by their respective functions. The zero'th
+ * player starts the game (has the first turn).
  *
  * @see init_cards
  * @see init_players

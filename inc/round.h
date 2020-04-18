@@ -1,8 +1,8 @@
 /**
  * @file
  *
- * @brief This file defines the structs for a question and quartet
- * plus the typedef of an answer.
+ * @brief This file defines the structs for a question and quartet plus the
+ * typedef of an answer.
  */
 
 #ifndef ROUND_H
@@ -13,8 +13,8 @@
 using namespace std;
 
 /**
- * @brief A question asked by a player. The player asks another
- * player for a specific card from a certain set.
+ * @brief A question asked by a player. The player asks another player for a
+ * specific card from a certain set.
  */
 struct Question {
 
@@ -35,9 +35,8 @@ struct Question {
 };
 
 /**
- * @brief An answer returned by a player. The answer is either
- * true or false denoting he/she has or does not has the card
- * which was asked for.
+ * @brief An answer returned by a player. The answer is either true or false
+ * denoting he/she has or does not has the card which was asked for.
  */
 typedef bool Answer;
 

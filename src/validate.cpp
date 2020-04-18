@@ -1,8 +1,8 @@
 /**
  * @file
  *
- * @brief This file defines functions which can check if
- * a question or state is valid.
+ * @brief This file defines functions which can check if a question or state is
+ * valid.
  */
 
 #include <iostream>
@@ -19,10 +19,9 @@ using namespace std;
 /**
  * @brief Do easy checks on if the question is valid.
  *
- * Check if the values (player, set, card) are all within
- * the bounds they can be. Additionally check if the player
- * whom a question is asked has at least one card and check
- * that the question is not pointed towards oneself.
+ * Check if the values (player, set, card) are all within the bounds they can
+ * be. Additionally check if the player whom a question is asked has at least
+ * one card and check that the question is not pointed towards oneself.
  */
 bool valid_question(const Settings &settings, const State &state, const Question &question)
 {
@@ -57,9 +56,9 @@ bool valid_question(const Settings &settings, const State &state, const Question
 /**
  * @brief Check if all the cards can be given to at least one player.
  *
- * In other words check if for every card it holds that the players
- * vector does not equal [0, ...,0]. Because then the card can not
- * be distributed and we immediatly know that the state is invalid.
+ * In other words check if for every card it holds that the players vector does
+ * not equal [0, ...,0]. Because then the card can not be distributed and we
+ * immediatly know that the state is invalid.
  */
 bool valid_cards(const Settings &settings, const State &state)
 {
@@ -79,13 +78,12 @@ bool valid_cards(const Settings &settings, const State &state)
 }
 
 /**
- * @brief Check if there not more set restrictions
- * than there are cards in a set.
+ * @brief Check if there not more set restrictions than there are cards in a
+ * set.
  *
- * Thus if player 0 needs to have 2 cards of set 0
- * and player 1 needs to have 3 cards of this same set,
- * then if SET_SIZE is smaller then 5 we immediatly know that
- * the state is invalid.
+ * Thus if player 0 needs to have 2 cards of set 0 and player 1 needs to have 3
+ * cards of this same set, then if SET_SIZE is smaller then 5 we immediatly
+ * know that the state is invalid.
  */
 bool valid_players(const Settings &settings, const State &state)
 {
