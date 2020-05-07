@@ -32,18 +32,22 @@ TARGETS       = quaternity tester
 all: $(TARGETS)
 
 quaternity: % : $(BIN_OBJ_FILES)
+	@echo -e "LINK\t$@"
 	$(CXX) $(CFLAGS) $(IFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(BIN_INC_FILES)
+	@echo -e "CXX\t$@"
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CFLAGS) $(IFLAGS) -c -o $@ $<
+	@$(CXX) $(CFLAGS) $(IFLAGS) -c -o $@ $<
 
 tester: % : $(TST_OBJ_FILES)
-	$(CXX) $(CFLAGS) $(IFLAGS) $(TFLAGS) -o $@ $^
+	@echo -e "LINK\t$@"
+	@$(CXX) $(CFLAGS) $(IFLAGS) $(TFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(TST_DIR)/%.cpp
+	@echo -e "CXX\t$@"
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CFLAGS) $(IFLAGS) -c -o $@ $<
+	@$(CXX) $(CFLAGS) $(IFLAGS) -c -o $@ $<
 
 # -----------------------------------------------------------------------------
 # Phonies
@@ -60,7 +64,7 @@ clean:
 	rm -rf $(OBJ_DIR) $(TARGETS)
 
 re:
-	@$(MAKE) clean
-	@$(MAKE)
+	@$(MAKE) -s clean
+	@$(MAKE) -s
 
 .PHONY: all test docs clean re
