@@ -33,7 +33,7 @@ all: $(TARGETS)
 
 quaternity: % : $(BIN_OBJ_FILES)
 	@echo -e "LINK\t$@"
-	$(CXX) $(CFLAGS) $(IFLAGS) -o $@ $^
+	@$(CXX) $(CFLAGS) $(IFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(BIN_INC_FILES)
 	@echo -e "CXX\t$@"
