@@ -53,9 +53,6 @@ $(OBJ_DIR)/%.o: $(TST_DIR)/%.cpp
 # Phonies
 # -----------------------------------------------------------------------------
 
-test:
-	@./tester
-
 docs:
 	@doxygen &> /dev/null
 	@echo "docs generated"
