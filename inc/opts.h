@@ -4,8 +4,8 @@
  * @brief This file defines the command line argument parsing function header.
  */
 
-#ifndef OPTS_H
-# define OPTS_H
+#ifndef OPTS_H_
+#define OPTS_H_
 
 #include "settings.h"
 

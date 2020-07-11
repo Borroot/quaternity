@@ -23,7 +23,7 @@ CFLAGS        = -Wall -Wextra -Werror -pedantic -std=c++11 $(EXTRAS)
 IFLAGS        = -I $(INC_DIR)
 TFLAGS        = -lcriterion
 
-TARGETS       = quaternity tester
+TARGETS       = quaternity test
 
 # -----------------------------------------------------------------------------
 # Build rules
@@ -40,7 +40,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(BIN_INC_FILES)
 	@mkdir -p $(OBJ_DIR)
 	@$(CXX) $(CFLAGS) $(IFLAGS) -c -o $@ $<
 
-tester: % : $(TST_OBJ_FILES)
+test: % : $(TST_OBJ_FILES)
 	@echo -e "LINK\t$@"
 	@$(CXX) $(CFLAGS) $(IFLAGS) $(TFLAGS) -o $@ $^
 
@@ -64,4 +64,4 @@ re:
 	@$(MAKE) -s clean
 	@$(MAKE) -s
 
-.PHONY: all test docs clean re
+.PHONY: all docs clean re

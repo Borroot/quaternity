@@ -4,8 +4,8 @@
  * @brief This file defines the settings struct.
  */
 
-#ifndef SETTINGS_H
-# define SETTINGS_H
+#ifndef SETTINGS_H_
+#define SETTINGS_H_
 
 /**
  * @brief The default value for SET_SIZE.

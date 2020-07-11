@@ -4,8 +4,8 @@
  * @brief This file defines an initialization function header.
  */
 
-#ifndef INIT_H
-# define INIT_H
+#ifndef INIT_H_
+#define INIT_H_
 
 #include <vector>
 

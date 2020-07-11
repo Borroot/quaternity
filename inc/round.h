@@ -5,8 +5,8 @@
  * typedef of an answer.
  */
 
-#ifndef ROUND_H
-# define ROUND_H
+#ifndef ROUND_H_
+#define ROUND_H_
 
 #include <vector>
 

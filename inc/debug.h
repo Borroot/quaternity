@@ -5,8 +5,8 @@
  * template for printing a vector. These are useful for debugging purposes.
  */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#ifndef DEBUG_H_
+#define DEBUG_H_
 
 #include <iostream>
 #include <vector>

@@ -5,8 +5,8 @@
  * question or state is valid.
  */
 
-#ifndef VALIDATE_H
-# define VALIDATE_H
+#ifndef VALIDATE_H_
+#define VALIDATE_H_
 
 #include "round.h"
 #include "settings.h"

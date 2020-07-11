@@ -4,8 +4,8 @@
  * @brief This file defines the structs for a card, player and a game state.
  */
 
-#ifndef STATE_H
-# define STATE_H
+#ifndef STATE_H_
+#define STATE_H_
 
 #include <vector>
 

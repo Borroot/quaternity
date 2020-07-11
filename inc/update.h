@@ -1,5 +1,5 @@
-#ifndef UPDATE_H
-# define UPDATE_H
+#ifndef UPDATE_H_
+#define UPDATE_H_
 
 #include <vector>
 

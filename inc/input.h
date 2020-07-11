@@ -4,8 +4,8 @@
  * @brief This file defines user input function headers.
  */
 
-#ifndef INPUT_H
-# define INPUT_H
+#ifndef INPUT_H_
+#define INPUT_H_
 
 #include "round.h"
 #include "settings.h"
