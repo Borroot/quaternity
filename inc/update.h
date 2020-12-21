@@ -1,3 +1,9 @@
+/**
+ * @file
+ *
+ * @brief This file defines the state update function header.
+ */
+
 #ifndef UPDATE_H_
 #define UPDATE_H_
 
@@ -8,8 +14,6 @@
 
 using namespace std;
 
-void update_state(const Settings &settings, State &state, const Question &question);
 void update_state(const Settings &settings, State &state, const Question &question, const Answer &answer);
-void update_state(const Settings &settings, State &state, const vector<Quartet> &quartets);
 
 #endif

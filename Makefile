@@ -18,7 +18,7 @@ TST_OBJ_FILES = $(patsubst $(TST_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(TST_SRC_FILES))
 # Flags
 # -----------------------------------------------------------------------------
 
-EXTRAS        = -Wno-unused-parameter -Wno-unused-variable
+EXTRAS        = -g -Wno-unused-parameter -Wno-unused-variable
 CFLAGS        = -Wall -Wextra -Werror -pedantic -std=c++11 $(EXTRAS)
 IFLAGS        = -I $(INC_DIR)
 TFLAGS        = -lcriterion

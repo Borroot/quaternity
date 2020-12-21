@@ -1,3 +1,10 @@
+/**
+ * @file
+ *
+ * @brief This file defines a function for updating the state given a question
+ * and answer.
+ */
+
 #include <vector>
 
 #include "round.h"
@@ -7,34 +14,55 @@
 
 using namespace std;
 
-void update_state(const Settings &settings, State &state, const Question &question) {
-	// update the set restrictions
-	state.players[state.onturn].sets[question.set] += state.players[state.onturn].sets[question.set] == 0 ? 1 : 0;
+/**
+ * @brief Update the state of the game according to the question asked and the
+ * answer which is given.
+ *
+ * - If the player onturn does not have have a set restriction for the asked
+ *   set yet, give it a set restriction of one.
+ * - If the answer is true.
+ *   - Update the set restrictions.
+ *     - Increase the player onturn's set restriction by one.
+ *     - Decrease the player asked set restriction by one (not lower than 0).
+ *   - Update who has the card which is asked.
+ *     - Set the card's player status only to true for the onturn player.
+ *   - Update the number of cards the players have.
+ *     - Increase the player onturn's card count by one.
+ *     - Decrease the player asked card count by one.
+ * - If the answer is false.
+ *   - Update who has the card which is asked.
+ *     - Set the card's player status false for the onturn player.
+ *     - Set the card's player status false for the asked player.
+ *   - Change onturn.
+ *     - Switch onturn to the player asked.
+ */
+void update_state(const Settings &settings, State &state, const Question &question, const Answer &answer)
+{
+	const int card = question.set * settings.SET_SIZE + question.card;
 
-	// update the possibly player a card can be
-	state.cards[question.set * settings.SET_SIZE + question.card].players[state.onturn] = false;
-}
+	// update the set restrictions based on question
+	int *set = &state.players[state.onturn].sets[question.set];
+	if (*set == 0) *set = 1;
 
-void update_state(const Settings &settings, State &state, const Question &question, const Answer &answer) {
 	if (answer) {
 		// update the set restrictions
 		state.players[state.onturn].sets[question.set] += 1;
-		state.players[question.player].sets[question.set] -= state.players[question.player].sets[question.set] == 0 ? 0 : 1;
+		int *set = &state.players[question.player].sets[question.set];
+		if (*set > 0) *set -= 1;
 
-		// update the possibly player a card can be
-		state.cards[question.set * settings.SET_SIZE + question.card].players = vector<bool>(settings.NUM_PLAYERS, false);
-		state.cards[question.set * settings.SET_SIZE + question.card].players[state.onturn] = true;
+		// update who has the card which is asked
+		state.cards[card].players = vector<bool>(settings.NUM_PLAYERS, false);
+		state.cards[card].players[state.onturn] = true;
 
-		// update the number of cards
+		// update the number of cards the players have
 		state.players[state.onturn].num_cards += 1;
 		state.players[question.player].num_cards -= 1;
 	} else {
-		// update the possible players a card can be
-		state.cards[question.set * settings.SET_SIZE + question.card].players[question.player] = false;
+		// update who could have the card which is asked
+		state.cards[card].players[state.onturn] = false;
+		state.cards[card].players[question.player] = false;
 
 		// update the turn
 		state.onturn = question.player;
 	}
 }
-
-void update_state(const Settings &settings, State &state, const vector<Quartet> &quartets);

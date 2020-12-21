@@ -1,12 +1,11 @@
 /**
  * @file
  *
- * @brief This file defines initialization functions.
+ * @brief This file defines state initialization and copy functions.
  */
 
 #include <vector>
 
-#include "init.h"
 #include "settings.h"
 #include "state.h"
 
@@ -37,10 +36,10 @@ vector<Card> init_cards(const Settings &settings)
  */
 vector<Player> init_players(const Settings &settings)
 {
+	const int NUM_CARDS = (settings.NUM_SETS * settings.SET_SIZE) / settings.NUM_PLAYERS;
 	vector<Player> players;
 	for (int i = 0; i < settings.NUM_PLAYERS; i++) {
-		Player player = {(settings.NUM_SETS * settings.SET_SIZE) / settings.NUM_PLAYERS,
-		                  vector<int>(settings.NUM_SETS, 0)};
+		Player player = {NUM_CARDS, vector<int>(settings.NUM_SETS, 0)};
 		players.push_back(player);
 	}
 	return players;
@@ -57,8 +56,42 @@ vector<Player> init_players(const Settings &settings)
  */
 State init_state(const Settings &settings)
 {
-	vector<Card> cards = init_cards(settings);
-	vector<Player> players = init_players(settings);
-	State state = {0, cards, players};
-	return state;
+	return State{0, init_cards(settings), init_players(settings)};
+}
+
+/**
+ * @brief Copy the old cards vector to a new cards vector.
+ */
+vector<Card> copy_cards(const vector<Card> cards)
+{
+	vector<Card> cards_copy;
+	for (Card card: cards) {
+		Card card_copy = {card.players};
+		cards_copy.push_back(card_copy);
+	}
+	return cards_copy;
+}
+
+/**
+ * @brief Copy the old player vector to a new player vector.
+ */
+vector<Player> copy_players(const vector<Player> players)
+{
+	vector<Player> players_copy;
+	for (Player player: players) {
+		Player player_copy = {player.num_cards, player.sets};
+		players_copy.push_back(player_copy);
+	}
+	return players;
+}
+
+/**
+ * @brief Copy the old state to a new state.
+ *
+ * @see copy_cards
+ * @see copy_players
+ */
+State copy_state(const State &state)
+{
+	return State{state.onturn, copy_cards(state.cards), copy_players(state.players)};
 }

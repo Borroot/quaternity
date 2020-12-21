@@ -7,146 +7,117 @@
 
 #include <iostream>
 #include <vector>
+#include <numeric>
 
 #include "debug.h"
+#include "match.h"
 #include "round.h"
 #include "settings.h"
 #include "state.h"
+#include "update.h"
 #include "validate.h"
 
 using namespace std;
 
 /**
- * @brief Do easy checks on if the question is valid.
+ * @brief Check if the question asked and the answer given are valid.
+ *
+ * In other words, there is at least one valid assignment of all cards to the
+ * players, after the question is asked and the answer is given.
+ */
+bool valid_answer(const Settings &settings, const State &state, const Question &question, const Answer &answer)
+{
+	// make a deep copy of the state which can be changed
+	State state_copy = copy_state(state);
+	update_state(settings, state_copy, question, answer);
+
+	// check that no player has more set constraints than cards
+	for (Player player: state_copy.players)
+		if (player.num_cards < accumulate(player.sets.begin(), player.sets.end(), 0))
+			return false;
+
+	// create the graph array and initialize all values to false
+	const int NUM_CARDS = settings.NUM_SETS * settings.SET_SIZE;
+	Graph graph(NUM_CARDS, vector<bool>(NUM_CARDS, false));
+
+	// set all the correct variables in the graph array
+	int hand_offset = 0;
+	for (int player_index = 0; player_index < settings.NUM_PLAYERS; player_index++) {
+		Player player = state_copy.players[player_index];
+		int hand_entry = 0;
+
+		for (int set_index = 0; set_index < settings.NUM_SETS; set_index++) {
+			int set = player.sets[set_index];
+
+			while (set-- > 0) {
+				for (int set_card = 0; set_card < settings.SET_SIZE; set_card++) {
+					int card = set_index * settings.SET_SIZE + set_card;
+
+					if (state_copy.cards[card].players[player_index] && !(player_index == state_copy.onturn && card == question.card))
+						graph[hand_offset + hand_entry][card] = true;
+				}
+				hand_entry++;
+			}
+		}
+
+		while (hand_entry < player.num_cards) {
+			for (int card = 0; card < NUM_CARDS; card++)
+				if (state_copy.cards[card].players[player_index] && !(player_index == state_copy.onturn && card == question.card))
+					graph[hand_offset + hand_entry][card] = true;
+			hand_entry++;
+		}
+
+		hand_offset += player.num_cards;
+	}
+
+	// TODO Do not allow someone to ask for a card they always have themselves.
+	cout << state_copy;
+	return match_exists(graph);
+}
+
+/**
+ * @brief Check if the question asked is valid.
  *
  * Check if the values (player, set, card) are all within the bounds they can
  * be. Additionally check if the player whom a question is asked has at least
- * one card and check that the question is not pointed towards oneself.
+ * one card and check that the question is not pointed towards oneself. We also
+ * make sure that there is at least one valid answer possible.
+ *
+ * @return array with two boolean values, the first one indicates if 0/false is
+ * a valid answer to the question, the second one indicates if 1/true is valid,
+ * if there is no valid answer possible NULL is returned
  */
-bool valid_question(const Settings &settings, const State &state, const Question &question)
+bool *valid_question(const Settings &settings, const State &state, const Question &question)
 {
 	if (question.player < 0 || question.player >= settings.NUM_PLAYERS) {
 		cerr << "Player is out of bounds." << endl;
-		return false;
+		return NULL;
 	}
 
 	if (question.set < 0 || question.set >= settings.NUM_SETS) {
 		cerr << "Set is out of bounds." << endl;
-		return false;
+		return NULL;
 	}
 
 	if (question.card < 0 || question.card >= settings.SET_SIZE) {
 		cerr << "Card is out of bounds." << endl;
-		return false;
+		return NULL;
 	}
 
 	if (state.onturn == question.player) {
 		cerr << "You cannot ask yourself a question." << endl;
-		return false;
+		return NULL;
 	}
 
 	if (state.players[question.player].num_cards < 1) {
 		cerr << "Player " << question.player << " does not have any cards." << endl;
-		return false;
+		return NULL;
 	}
 
-	return true;
-}
+	bool *valid_answers = new bool[2];
 
-/**
- * @brief Check if all the cards can be given to at least one player.
- *
- * In other words check if for every card it holds that the players vector does
- * not equal [0, ...,0]. Because then the card can not be distributed and we
- * immediatly know that the state is invalid.
- */
-bool valid_cards(const Settings &settings, const State &state)
-{
-	for (int card = 0; card < (int)state.cards.size(); card++) {
-		int count = 0;
-		for (int player = 0; player < settings.NUM_PLAYERS; player++) {
-			if (!state.cards[card].players[player]) {
-				count++;
-			}
-		}
-		if (count >= settings.NUM_PLAYERS) {
-			cerr << "Your answer/question is invalid." << endl;
-			return false;
-		}
-	}
-	return true;
-}
+	valid_answers[0] = valid_answer(settings, state, question, false);
+	valid_answers[1] = valid_answer(settings, state, question, true);
 
-/**
- * @brief Check if there not more set restrictions than there are cards in a
- * set.
- *
- * Thus if player 0 needs to have 2 cards of set 0 and player 1 needs to have 3
- * cards of this same set, then if SET_SIZE is smaller then 5 we immediatly
- * know that the state is invalid.
- */
-bool valid_players(const Settings &settings, const State &state)
-{
-	vector<int> sets = vector<int>(settings.NUM_SETS, 0);
-	for (int player = 0; player < settings.NUM_PLAYERS; player++) {
-		for (int set = 0; set < settings.NUM_SETS; set++) {
-			sets[set] += state.players[player].sets[set];
-		}
-	}
-	for (int set = 0; set < settings.NUM_SETS; set++) {
-		if (sets[set] > settings.SET_SIZE) {
-			return false;
-		}
-	}
-	return true;
-}
-
-bool dfs(const Settings &settings, State state)//, vector<int> unassigned)
-{
-	// if unassigned is empty
-	//   return true
-
-	// if set constraint left
-	//   player = set constraint player
-	//   for every set constraint relief card
-	//     card = set constraint relief card
-	//
-	//     ----
-	//     if player.num_cards > 1
-	//       assign card to player (remove from unassigned)
-	//       update player num_cards and set constraints
-	//       if dfs(new state, new unassigned)
-	//         return true
-	//     ----
-	//   return false
-	//
-	// else
-	//   card = next card (choose from unassigned)
-	//   for every player that can have this card
-	//     player = player can have this card
-	//
-	//     ----
-	//     if player.num_cards > 1
-	//       assign card to player (remove from unassigned)
-	//       update player num_cards and set constraints
-	//       if dfs(new state, new unassigned)
-	//         return true
-	//     ----
-	//   return false
-
-	return true;
-}
-
-bool valid_state_exists(const Settings &settings, const State &state)
-{
-	// for all cards with only one possible player, e.g. [1,0,0] or [0,1,0]
-	//   assign card to player (remove from unassigned)
-	//   update player num_cards and set constraints
-	return dfs(settings, state);
-}
-
-bool valid_state(const Settings &settings, const State &state)
-{
-	return valid_cards(settings, state) && valid_players(settings, state)
-	    && valid_state_exists(settings, state);
+	return !valid_answers[0] && !valid_answers[1] ? NULL : valid_answers;
 }

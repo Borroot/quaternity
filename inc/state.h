@@ -1,7 +1,8 @@
 /**
  * @file
  *
- * @brief This file defines the structs for a card, player and a game state.
+ * @brief This file defines the structs for a card, player and a game state,
+ * plus a state initialize and copy function header.
  */
 
 #ifndef STATE_H_
@@ -69,7 +70,7 @@ struct State {
 	 * which card they are with respect to their set. Consider the following
 	 * example [card0, ..., card7] and we have a SET_SIZE of 4 and thus a
 	 * NUM_SETS of 2 then the cards [card0, ..., card3] belong to set 0 and
-	 * [card4, ..., card7] belong to set 1. In these examples card4 will be
+	 * [card4, ..., card7] belong to set 1. So, in these examples card4 will be
 	 * card 0 with respect to its own set and card7 will be card 3.
 	 */
 	vector<Card> cards;
@@ -81,5 +82,8 @@ struct State {
 	 */
 	vector<Player> players;
 };
+
+State init_state(const Settings &settings);
+State copy_state(const State &state);
 
 #endif

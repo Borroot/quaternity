@@ -2,7 +2,6 @@
 #include <string>
 
 #include "debug.h"
-#include "init.h"
 #include "input.h"
 #include "opts.h"
 #include "settings.h"
@@ -21,31 +20,25 @@ int main(int argc, char **argv)
 	cout << state;
 
 	while (true) { // not game over
+		bool *valid_answers;
+
 		// QUESTION
 		Question question;
 		do {
-			do {
-				question = ask_question();
-				cout << question;
-			} while (!valid_question(settings, state, question));
-			update_state(settings, state, question);
-		} while (!valid_state(settings, state));
-
-		cout << state;
+			question = ask_question();
+			cout << question;
+			valid_answers = valid_question(settings, state, question);
+		} while (valid_answers == NULL);
 
 		// ANSWER
 		Answer answer;
 		do {
 			answer = ask_answer();
 			cout << "Answer: " << answer << "." << endl;
-			update_state(settings, state, question, answer);
-		} while (!valid_state(settings, state));
+		} while (!valid_answers[answer]);
 
+		update_state(settings, state, question, answer);
 		cout << state;
-
-		// QUARTETS
-
-		// COMMIT STATE
 	}
 
 	return 0;

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['num_5fcards_21',['num_cards',['../structPlayer.html#a83bd29acbedad8704d10a21cc81c195a',1,'Player']]],
-  ['num_5fplayers_22',['NUM_PLAYERS',['../structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a',1,'Settings']]],
-  ['num_5fsets_23',['NUM_SETS',['../structSettings.html#a411c7df35c83865a5273ae9bf2d57790',1,'Settings']]]
+  ['main_21',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
+  ['main_2ecpp_22',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['match_2ecpp_23',['match.cpp',['../match_8cpp.html',1,'']]],
+  ['match_2eh_24',['match.h',['../match_8h.html',1,'']]],
+  ['match_5fexists_25',['match_exists',['../match_8cpp.html#ab73b44a855bd0643a89ad27ed65a0765',1,'match_exists(const Graph &amp;graph):&#160;match.cpp'],['../match_8h.html#ab73b44a855bd0643a89ad27ed65a0765',1,'match_exists(const Graph &amp;graph):&#160;match.cpp']]]
 ];

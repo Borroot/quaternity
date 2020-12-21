@@ -1,8 +1,8 @@
 /**
  * @file
  *
- * @brief This file defines the structs for a question and quartet plus the
- * typedef of an answer.
+ * @brief This file defines the structs for a question and typedef of an
+ * answer.
  */
 
 #ifndef ROUND_H_
@@ -39,11 +39,5 @@ struct Question {
  * denoting he/she has or does not has the card which was asked for.
  */
 typedef bool Answer;
-
-// TODO write docs
-struct Quartet {
-	int player;
-	int set;
-};
 
 #endif
