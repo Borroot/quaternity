@@ -4,9 +4,8 @@ var indexSectionsWithContent =
   1: "cpqs",
   2: "dgimorstuv",
   3: "acdfgimotuv",
-  4: "cnops",
-  5: "ag",
-  6: "d"
+  4: "cdnops",
+  5: "ag"
 };
 
 var indexSectionNames =
@@ -16,8 +15,7 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "typedefs",
-  6: "defines"
+  5: "typedefs"
 };
 
 var indexSectionLabels =
@@ -27,7 +25,6 @@ var indexSectionLabels =
   2: "Files",
   3: "Functions",
   4: "Variables",
-  5: "Typedefs",
-  6: "Macros"
+  5: "Typedefs"
 };
 

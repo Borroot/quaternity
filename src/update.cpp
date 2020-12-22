@@ -12,8 +12,6 @@
 #include "state.h"
 #include "update.h"
 
-using namespace std;
-
 /**
  * @brief Update the state of the game according to the question asked and the
  * answer which is given.
@@ -51,7 +49,7 @@ void update_state(const Settings &settings, State &state, const Question &questi
 		if (*set > 0) *set -= 1;
 
 		// update who has the card which is asked
-		state.cards[card].players = vector<bool>(settings.NUM_PLAYERS, false);
+		state.cards[card].players = std::vector<bool>(settings.NUM_PLAYERS, false);
 		state.cards[card].players[state.onturn] = true;
 
 		// update the number of cards the players have

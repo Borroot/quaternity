@@ -16,11 +16,11 @@
  * at the start every player could have that card. There are a total of
  * `SET_SIZE * NUM_SETS` cards which will be generated.
  */
-vector<Card> init_cards(const Settings &settings)
+std::vector<Card> init_cards(const Settings &settings)
 {
-	vector<Card> cards;
+	std::vector<Card> cards;
 	for (int i = 0; i < settings.SET_SIZE * settings.NUM_SETS; i++) {
-		Card card = {vector<bool>(settings.NUM_PLAYERS, true)};
+		Card card = {std::vector<bool>(settings.NUM_PLAYERS, true)};
 		cards.push_back(card);
 	}
 	return cards;
@@ -34,12 +34,12 @@ vector<Card> init_cards(const Settings &settings)
  * cards. They further have the sets vector initialized to all zeros because
  * they do not need to have any specific set at the start.
  */
-vector<Player> init_players(const Settings &settings)
+std::vector<Player> init_players(const Settings &settings)
 {
 	const int NUM_CARDS = (settings.NUM_SETS * settings.SET_SIZE) / settings.NUM_PLAYERS;
-	vector<Player> players;
+	std::vector<Player> players;
 	for (int i = 0; i < settings.NUM_PLAYERS; i++) {
-		Player player = {NUM_CARDS, vector<int>(settings.NUM_SETS, 0)};
+		Player player = {NUM_CARDS, std::vector<int>(settings.NUM_SETS, 0)};
 		players.push_back(player);
 	}
 	return players;
@@ -62,9 +62,9 @@ State init_state(const Settings &settings)
 /**
  * @brief Copy the old cards vector to a new cards vector.
  */
-vector<Card> copy_cards(const vector<Card> cards)
+std::vector<Card> copy_cards(const std::vector<Card> cards)
 {
-	vector<Card> cards_copy;
+	std::vector<Card> cards_copy;
 	for (Card card: cards) {
 		Card card_copy = {card.players};
 		cards_copy.push_back(card_copy);
@@ -75,9 +75,9 @@ vector<Card> copy_cards(const vector<Card> cards)
 /**
  * @brief Copy the old player vector to a new player vector.
  */
-vector<Player> copy_players(const vector<Player> players)
+std::vector<Player> copy_players(const std::vector<Player> players)
 {
-	vector<Player> players_copy;
+	std::vector<Player> players_copy;
 	for (Player player: players) {
 		Player player_copy = {player.num_cards, player.sets};
 		players_copy.push_back(player_copy);

@@ -80,39 +80,37 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="settings_8h.html">settings.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html">state.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">   24</a></span>&#160;ostream &amp;<a class="code" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a>(ostream &amp;out, <span class="keyword">const</span> vector&lt;T&gt; &amp;vector)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)vector.size(); i++) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        out &lt;&lt; vector[i];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (i &lt; (<span class="keywordtype">int</span>)vector.size() - 1) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;ostream &amp;<a class="code" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a>(ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structCard.html">Card</a> &amp;card);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;ostream &amp;<a class="code" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a>(ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structPlayer.html">Player</a> &amp;player);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;ostream &amp;<a class="code" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a>(ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;ostream &amp;<a class="code" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a>(ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structState.html">State</a> &amp;state);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;ostream &amp;<a class="code" href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a>(ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structQuestion.html">Question</a> &amp;question);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DEBUG_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">   22</a></span>&#160;std::ostream &amp;<a class="code" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> std::vector&lt;T&gt; &amp;vector)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)vector.size(); i++) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        out &lt;&lt; vector[i];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (i &lt; (<span class="keywordtype">int</span>)vector.size() - 1) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;std::ostream &amp;<a class="code" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structCard.html">Card</a> &amp;card);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;std::ostream &amp;<a class="code" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structPlayer.html">Player</a> &amp;player);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;std::ostream &amp;<a class="code" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structSettings.html">Settings</a> &amp;settings);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;std::ostream &amp;<a class="code" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structState.html">State</a> &amp;state);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::ostream &amp;<a class="code" href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="structQuestion.html">Question</a> &amp;question);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DEBUG_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="asettings_8h_html"><div class="ttname"><a href="settings_8h.html">settings.h</a></div><div class="ttdoc">This file defines the settings struct.</div></div>
-<div class="ttc" id="astructCard_html"><div class="ttname"><a href="structCard.html">Card</a></div><div class="ttdoc">The information connected to a card.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00021">state.h:21</a></div></div>
+<div class="ttc" id="astructCard_html"><div class="ttname"><a href="structCard.html">Card</a></div><div class="ttdoc">The information connected to a card.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00019">state.h:19</a></div></div>
 <div class="ttc" id="around_8h_html"><div class="ttname"><a href="round_8h.html">round.h</a></div><div class="ttdoc">This file defines the structs for a question and typedef of an answer.</div></div>
-<div class="ttc" id="astructQuestion_html"><div class="ttname"><a href="structQuestion.html">Question</a></div><div class="ttdoc">A question asked by a player. The player asks another player for a specific card from a certain set.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00019">round.h:19</a></div></div>
-<div class="ttc" id="astructSettings_html"><div class="ttname"><a href="structSettings.html">Settings</a></div><div class="ttdoc">The settings which characterize a game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00028">settings.h:28</a></div></div>
-<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdoc">The information connected to a player.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00036">state.h:36</a></div></div>
-<div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdoc">The complete game state.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00059">state.h:59</a></div></div>
+<div class="ttc" id="astructQuestion_html"><div class="ttname"><a href="structQuestion.html">Question</a></div><div class="ttdoc">A question asked by a player. The player asks another player for a specific card from a certain set.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00017">round.h:17</a></div></div>
+<div class="ttc" id="astructSettings_html"><div class="ttname"><a href="structSettings.html">Settings</a></div><div class="ttdoc">The settings which characterize a game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00022">settings.h:22</a></div></div>
+<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdoc">The information connected to a player.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00034">state.h:34</a></div></div>
+<div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdoc">The complete game state.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00057">state.h:57</a></div></div>
 <div class="ttc" id="astate_8h_html"><div class="ttname"><a href="state_8h.html">state.h</a></div><div class="ttdoc">This file defines the structs for a card, player and a game state, plus a state initialize and copy f...</div></div>
-<div class="ttc" id="adebug_8h_html_a4dffd0474b419e80a63f9066130d7e9e"><div class="ttname"><a href="debug_8h.html#a4dffd0474b419e80a63f9066130d7e9e">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;out, const vector&lt; T &gt; &amp;vector)</div><div class="ttdef"><b>Definition:</b> <a href="debug_8h_source.html#l00024">debug.h:24</a></div></div>
+<div class="ttc" id="adebug_8h_html_a19ce91cdc42c18e02394f22c0144e7aa"><div class="ttname"><a href="debug_8h.html#a19ce91cdc42c18e02394f22c0144e7aa">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, const std::vector&lt; T &gt; &amp;vector)</div><div class="ttdoc">Print the elements of a vector nicely.</div><div class="ttdef"><b>Definition:</b> <a href="debug_8h_source.html#l00022">debug.h:22</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

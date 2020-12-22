@@ -11,8 +11,6 @@
 
 #include "graph.h"
 
-using namespace std;
-
 bool match_exists(const Graph &graph);
 
 #endif /* MATCH_H_ */

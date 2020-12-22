@@ -10,8 +10,6 @@
 
 #include <vector>
 
-using namespace std;
-
 /**
  * @brief The information connected to a card.
  *
@@ -27,7 +25,7 @@ struct Card {
 	 * otherwise. To give an example, [0,1,0] means that player 0 and 2 cannot
 	 * have this card, but player 1 can have this card.
 	 */
-	vector<bool> players;
+	std::vector<bool> players;
 };
 
 /**
@@ -47,7 +45,7 @@ struct Player {
 	 * from set 0, it has at least 3 cards from set 1 and it has at least 1
 	 * card from set 2.
 	 */
-	vector<int> sets;
+	std::vector<int> sets;
 };
 
 /**
@@ -73,14 +71,14 @@ struct State {
 	 * [card4, ..., card7] belong to set 1. So, in these examples card4 will be
 	 * card 0 with respect to its own set and card7 will be card 3.
 	 */
-	vector<Card> cards;
+	std::vector<Card> cards;
 
 	/**
 	 * @brief The information on all the players.
 	 *
 	 * This is where it is defined who is player 0, 1, etc.
 	 */
-	vector<Player> players;
+	std::vector<Player> players;
 };
 
 State init_state(const Settings &settings);

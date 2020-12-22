@@ -10,15 +10,13 @@
 #include "settings.h"
 #include "input.h"
 
-using namespace std;
-
 /**
  * @brief Flush the input stream so it is empty for the next user input.
  */
 void flush()
 {
-	cin.clear();
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 /**
@@ -26,9 +24,9 @@ void flush()
  */
 Question ask_question()
 {
-	cout << "Please provide a question (player, set, card)." << endl << "> ";
+	std::cout << "Please provide a question (player, set, card)." << std::endl << "> ";
 	Question question;
-	cin >> question.player >> question.set >> question.card;
+	std::cin >> question.player >> question.set >> question.card;
 	flush();
 	return question;
 }
@@ -38,9 +36,9 @@ Question ask_question()
  */
 Answer ask_answer()
 {
-	cout << "Please provide your answer (0/1)." << endl << "> ";
+	std::cout << "Please provide your answer (0/1)." << std::endl << "> ";
 	Answer answer;
-	cin >> answer;
+	std::cin >> answer;
 	flush();
 	return answer;
 }

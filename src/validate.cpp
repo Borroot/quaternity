@@ -17,8 +17,6 @@
 #include "update.h"
 #include "validate.h"
 
-using namespace std;
-
 /**
  * @brief Check if there exists a matching for the given state.
  *
@@ -62,7 +60,7 @@ bool valid_answer(const Settings &settings, const State &state, const Question &
 		if (*set == 0) *set = 1;
 
 		// the asked player has the card being asked
-		state_copy.cards[card].players = vector<bool>(settings.NUM_PLAYERS, false);
+		state_copy.cards[card].players = std::vector<bool>(settings.NUM_PLAYERS, false);
 		state_copy.cards[card].players[question.player] = true;
 
 		if (!valid_state(settings, state_copy)) return false;
@@ -89,27 +87,27 @@ bool valid_answer(const Settings &settings, const State &state, const Question &
 bool *valid_question(const Settings &settings, const State &state, const Question &question)
 {
 	if (question.player < 0 || question.player >= settings.NUM_PLAYERS) {
-		cerr << "Player is out of bounds." << endl;
+		std::cerr << "Player is out of bounds." << std::endl;
 		return NULL;
 	}
 
 	if (question.set < 0 || question.set >= settings.NUM_SETS) {
-		cerr << "Set is out of bounds." << endl;
+		std::cerr << "Set is out of bounds." << std::endl;
 		return NULL;
 	}
 
 	if (question.card < 0 || question.card >= settings.SET_SIZE) {
-		cerr << "Card is out of bounds." << endl;
+		std::cerr << "Card is out of bounds." << std::endl;
 		return NULL;
 	}
 
 	if (state.onturn == question.player) {
-		cerr << "You cannot ask yourself a question." << endl;
+		std::cerr << "You cannot ask yourself a question." << std::endl;
 		return NULL;
 	}
 
 	if (state.players[question.player].num_cards < 1) {
-		cerr << "Player " << question.player << " does not have any cards." << endl;
+		std::cerr << "Player " << question.player << " does not have any cards." << std::endl;
 		return NULL;
 	}
 

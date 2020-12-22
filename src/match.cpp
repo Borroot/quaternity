@@ -12,7 +12,7 @@
  * @brief Depth first search recursive function which returns true if a
  * matching for (left) node `lnode` is possible.
  */
-bool dfs(const Graph &graph, int lnode, vector<bool> &seen, vector<int> &match)
+bool dfs(const Graph &graph, int lnode, std::vector<bool> &seen, std::vector<int> &match)
 {
 	for (size_t rnode = 0; rnode < graph.size(); rnode++) {
 		if (graph[lnode][rnode] && !seen[rnode]) {
@@ -31,9 +31,9 @@ bool dfs(const Graph &graph, int lnode, vector<bool> &seen, vector<int> &match)
  */
 bool match_exists(const Graph &graph)
 {
-	vector<int> match(graph.size(), -1);
+	std::vector<int> match(graph.size(), -1);
 	for (size_t lnode = 0; lnode < graph.size(); lnode++) {
-		vector<bool> seen(graph.size(), false);
+		std::vector<bool> seen(graph.size(), false);
 		if (!dfs(graph, lnode, seen, match))
 			return false;
 	}

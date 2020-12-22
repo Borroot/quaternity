@@ -13,12 +13,10 @@
 #include "settings.h"
 #include "state.h"
 
-using namespace std;
-
 /**
  * @brief Print the information of a card struct.
  */
-ostream &operator<<(ostream &out, const Card &card)
+std::ostream &operator<<(std::ostream &out, const Card &card)
 {
 	out << card.players;
 	return out;
@@ -27,7 +25,7 @@ ostream &operator<<(ostream &out, const Card &card)
 /**
  * @brief Print the information of a player struct.
  */
-ostream &operator<<(ostream &out, const Player &player)
+std::ostream &operator<<(std::ostream &out, const Player &player)
 {
 	out << "(" << player.num_cards << "," << player.sets << ")";
 	return out;
@@ -36,34 +34,34 @@ ostream &operator<<(ostream &out, const Player &player)
 /**
  * @brief Print the information of a settings struct.
  */
-ostream &operator<<(ostream &out, const Settings &settings)
+std::ostream &operator<<(std::ostream &out, const Settings &settings)
 {
 	out << "Settings: "
 		<< "set size = "    << settings.SET_SIZE    << ", "
 		<< "num sets = "    << settings.NUM_SETS    << ", "
-		<< "num players = " << settings.NUM_PLAYERS << "." << endl;
+		<< "num players = " << settings.NUM_PLAYERS << "." << std::endl;
 	return out;
 }
 
 /**
  * @brief Print the information of a state struct.
  */
-ostream &operator<<(ostream &out, const State &state)
+std::ostream &operator<<(std::ostream &out, const State &state)
 {
-	out << "Onturn: "  << state.onturn  << endl
-	    << "Cards: "   << state.cards   << endl
-	    << "Players: " << state.players << endl;
+	out << "Onturn: "  << state.onturn  << std::endl
+	    << "Cards: "   << state.cards   << std::endl
+	    << "Players: " << state.players << std::endl;
 	return out;
 }
 
 /**
  * @brief Print the information of a question struct.
  */
-ostream &operator<<(ostream &out, const Question &question)
+std::ostream &operator<<(std::ostream &out, const Question &question)
 {
 	out << "Question: "
 	    << "player = " << question.player << ", "
 	    << "set = "    << question.set    << ", "
-	    << "card = "   << question.card   << "." << endl;
+	    << "card = "   << question.card   << "." << std::endl;
 	return out;
 }

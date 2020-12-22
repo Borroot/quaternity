@@ -12,29 +12,27 @@
 #include "opts.h"
 #include "settings.h"
 
-using namespace std;
-
 /**
  * @brief Print the usage information for this program on the screen.
  *
  * @param argv Command line arguments.
  */
-void usage(const char **argv)
+void usage(std::ostream &out, const char **argv)
 {
-	cerr
-		<< "Usage: " << argv[0] << " [OPTIONS]"             << endl
-		                                                    << endl
-		<< "  A flexible engine for imaginary quartet!"     << endl
-		                                                    << endl
-		<< "Note:"                                          << endl
-		<< "  To ensure an equal distribution of the cards" << endl
-		<< "  we enforce: (n * s) mod p == 0."              << endl
-		                                                    << endl
-		<< "Options:"                                       << endl
-		<< "  -s [int]    Size of one set.   [default: "    << DEFAULT_SET_SIZE    << "]" << endl
-		<< "  -n [int]    Number of sets.    [default: "    << DEFAULT_NUM_SETS    << "]" << endl
-		<< "  -p [int]    Number of players. [default: "    << DEFAULT_NUM_PLAYERS << "]" << endl
-		<< "  -h          Show this help and exit."         << endl;
+	out
+		<< "Usage: " << argv[0] << " [OPTIONS]"             << std::endl
+		                                                    << std::endl
+		<< "  A flexible engine for imaginary quartet!"     << std::endl
+		                                                    << std::endl
+		<< "Note:"                                          << std::endl
+		<< "  To ensure an equal distribution of the cards" << std::endl
+		<< "  we enforce: (n * s) mod p == 0."              << std::endl
+		                                                    << std::endl
+		<< "Options:"                                       << std::endl
+		<< "  -s [int]    Size of one set.   [default: "    << DEFAULT_SET_SIZE    << "]" << std::endl
+		<< "  -n [int]    Number of sets.    [default: "    << DEFAULT_NUM_SETS    << "]" << std::endl
+		<< "  -p [int]    Number of players. [default: "    << DEFAULT_NUM_PLAYERS << "]" << std::endl
+		<< "  -h          Show this help and exit."         << std::endl;
 
 }
 
@@ -51,22 +49,22 @@ void usage(const char **argv)
 bool valid(const Settings &settings, const char **argv)
 {
 	if (settings.SET_SIZE < 1) {
-		cerr << argv[0] << ": the size of one set has to be at least one" << endl;
+		std::cerr << argv[0] << ": the size of one set has to be at least one" << std::endl;
 		return false;
 	}
 
 	if (settings.NUM_SETS < 1) {
-		cerr << argv[0] << ": the number of sets has to be at least one" << endl;
+		std::cerr << argv[0] << ": the number of sets has to be at least one" << std::endl;
 		return false;
 	}
 
 	if (settings.NUM_PLAYERS < 2) {
-		cerr << argv[0] << ": the number of players has to be at least two" << endl;
+		std::cerr << argv[0] << ": the number of players has to be at least two" << std::endl;
 		return false;
 	}
 
 	if ((settings.NUM_SETS * settings.SET_SIZE) % settings.NUM_PLAYERS != 0) {
-		cerr << argv[0] << ": enforces (n * s) mod p == 0" << endl;
+		std::cerr << argv[0] << ": enforces (n * s) mod p == 0" << std::endl;
 		return false;
 	}
 
@@ -103,17 +101,17 @@ Settings options(const int argc, const char **argv)
 				NUM_PLAYERS = atoi(optarg);
 				break;
 			case 'h':
-				usage(argv);
+				usage(std::cout, argv);
 				exit(EXIT_SUCCESS);
 			default:  // '?'
-				usage(argv);
+				usage(std::cerr, argv);
 				exit(EXIT_FAILURE);
 		}
 	}
 
 	Settings settings = {SET_SIZE, NUM_SETS, NUM_PLAYERS};
 	if (!valid(settings, argv)) {
-		usage(argv);
+		usage(std::cerr, argv);
 		exit(EXIT_FAILURE);
 	}
 	return settings;

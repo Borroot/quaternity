@@ -7,20 +7,14 @@
 #ifndef SETTINGS_H_
 #define SETTINGS_H_
 
-/**
- * @brief The default value for SET_SIZE.
- */
-#define DEFAULT_SET_SIZE 4
+/** @brief The default value for SET_SIZE.  */
+constexpr int DEFAULT_SET_SIZE = 4;
 
-/**
- * @brief The default value for NUM_SETS.
- */
-#define DEFAULT_NUM_SETS 3
+/** @brief The default value for NUM_SETS.  */
+constexpr int DEFAULT_NUM_SETS = 3;
 
-/**
- * @brief The default value for NUM_PLAYERS.
- */
-#define DEFAULT_NUM_PLAYERS 3
+/** @brief The default value for NUM_PLAYERS.  */
+constexpr int DEFAULT_NUM_PLAYERS = 3;
 
 /**
  * @brief The settings which characterize a game.

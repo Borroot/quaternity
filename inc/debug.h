@@ -15,13 +15,11 @@
 #include "settings.h"
 #include "state.h"
 
-using namespace std;
-
 /**
- * Print the elements of a vector nicely.
+ * @brief Print the elements of a vector nicely.
  */
 template <class T>
-ostream &operator<<(ostream &out, const vector<T> &vector)
+std::ostream &operator<<(std::ostream &out, const std::vector<T> &vector)
 {
 	out << "[";
 	for (int i = 0; i < (int)vector.size(); i++) {
@@ -34,10 +32,10 @@ ostream &operator<<(ostream &out, const vector<T> &vector)
 	return out;
 }
 
-ostream &operator<<(ostream &out, const Card &card);
-ostream &operator<<(ostream &out, const Player &player);
-ostream &operator<<(ostream &out, const Settings &settings);
-ostream &operator<<(ostream &out, const State &state);
-ostream &operator<<(ostream &out, const Question &question);
+std::ostream &operator<<(std::ostream &out, const Card &card);
+std::ostream &operator<<(std::ostream &out, const Player &player);
+std::ostream &operator<<(std::ostream &out, const Settings &settings);
+std::ostream &operator<<(std::ostream &out, const State &state);
+std::ostream &operator<<(std::ostream &out, const Question &question);
 
 #endif /* DEBUG_H_ */

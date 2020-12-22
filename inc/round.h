@@ -10,8 +10,6 @@
 
 #include <vector>
 
-using namespace std;
-
 /**
  * @brief A question asked by a player. The player asks another player for a
  * specific card from a certain set.

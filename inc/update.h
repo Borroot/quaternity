@@ -12,8 +12,6 @@
 #include "round.h"
 #include "state.h"
 
-using namespace std;
-
 void update_state(const Settings &settings, State &state, const Question &question, const Answer &answer);
 
 #endif /* UPDATE */

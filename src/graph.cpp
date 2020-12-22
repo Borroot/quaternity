@@ -91,7 +91,7 @@ Graph graph_create(const Settings &settings, const State &state)
 
 	// create the graph array and initialize all values to false
 	const int NUM_CARDS = settings.NUM_SETS * settings.SET_SIZE;
-	Graph graph(NUM_CARDS, vector<bool>(NUM_CARDS, false));
+	Graph graph(NUM_CARDS, std::vector<bool>(NUM_CARDS, false));
 
 	// set the corresponding edges for all players
 	int hand_offset = 0;

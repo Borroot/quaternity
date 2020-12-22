@@ -79,27 +79,27 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8473e0f33782aa5732beb378a228d383"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a></td></tr>
 <tr class="memdesc:a8473e0f33782aa5732beb378a228d383"><td class="mdescLeft">&#160;</td><td class="mdescRight">The player who is on turn.  <a href="structState.html#a8473e0f33782aa5732beb378a228d383">More...</a><br /></td></tr>
 <tr class="separator:a8473e0f33782aa5732beb378a228d383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e63eed6ae62ea8265ee145e740627e0"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">cards</a></td></tr>
-<tr class="memdesc:a6e63eed6ae62ea8265ee145e740627e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the cards.  <a href="structState.html#a6e63eed6ae62ea8265ee145e740627e0">More...</a><br /></td></tr>
-<tr class="separator:a6e63eed6ae62ea8265ee145e740627e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79523852328cce39d41d480e71a16032"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a79523852328cce39d41d480e71a16032">players</a></td></tr>
-<tr class="memdesc:a79523852328cce39d41d480e71a16032"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the players.  <a href="structState.html#a79523852328cce39d41d480e71a16032">More...</a><br /></td></tr>
-<tr class="separator:a79523852328cce39d41d480e71a16032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff72023586f1fa27512f4142f4f98af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a7ff72023586f1fa27512f4142f4f98af">cards</a></td></tr>
+<tr class="memdesc:a7ff72023586f1fa27512f4142f4f98af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the cards.  <a href="structState.html#a7ff72023586f1fa27512f4142f4f98af">More...</a><br /></td></tr>
+<tr class="separator:a7ff72023586f1fa27512f4142f4f98af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4183466316e6a008061fdf0871d1cc87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a></td></tr>
+<tr class="memdesc:a4183466316e6a008061fdf0871d1cc87"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the players.  <a href="structState.html#a4183466316e6a008061fdf0871d1cc87">More...</a><br /></td></tr>
+<tr class="separator:a4183466316e6a008061fdf0871d1cc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The complete game state. </p>
 <p>This struct contains all the information of the game state at a specific moment in time. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00059">59</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00057">57</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6e63eed6ae62ea8265ee145e740627e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e63eed6ae62ea8265ee145e740627e0">&#9670;&nbsp;</a></span>cards</h2>
+<a id="a7ff72023586f1fa27512f4142f4f98af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff72023586f1fa27512f4142f4f98af">&#9670;&nbsp;</a></span>cards</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="structCard.html">Card</a>&gt; State::cards</td>
+          <td class="memname">std::vector&lt;<a class="el" href="structCard.html">Card</a>&gt; State::cards</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -107,7 +107,7 @@ Public Attributes</h2></td></tr>
 <p>The information on all the cards. </p>
 <p>This vector also contains information on which card is in what set and which card they are with respect to their set. Consider the following example [card0, ..., card7] and we have a SET_SIZE of 4 and thus a NUM_SETS of 2 then the cards [card0, ..., card3] belong to set 0 and [card4, ..., card7] belong to set 1. So, in these examples card4 will be card 0 with respect to its own set and card7 will be card 3. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00076">76</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00074">74</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>
@@ -125,18 +125,18 @@ Public Attributes</h2></td></tr>
 
 <p>The player who is on turn. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00064">64</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00062">62</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>
-<a id="a79523852328cce39d41d480e71a16032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79523852328cce39d41d480e71a16032">&#9670;&nbsp;</a></span>players</h2>
+<a id="a4183466316e6a008061fdf0871d1cc87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4183466316e6a008061fdf0871d1cc87">&#9670;&nbsp;</a></span>players</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="structPlayer.html">Player</a>&gt; State::players</td>
+          <td class="memname">std::vector&lt;<a class="el" href="structPlayer.html">Player</a>&gt; State::players</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -144,7 +144,7 @@ Public Attributes</h2></td></tr>
 <p>The information on all the players. </p>
 <p>This is where it is defined who is player 0, 1, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00083">83</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00081">81</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>

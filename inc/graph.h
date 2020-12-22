@@ -16,7 +16,7 @@
  * @brief A bipartite graph where true booleans represent edges between a left
  * node denoted as the row and a right node denoted as the column in the grid.
  */
-typedef vector<vector<bool>> Graph;
+typedef std::vector<std::vector<bool>> Graph;
 
 bool  graph_possible(const State &state);
 Graph graph_create(const Settings &settings, const State &state);
