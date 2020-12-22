@@ -11,4 +11,4 @@
 
 Settings options(const int argc, const char **argv);
 
-#endif
+#endif /* OPTS_H_ */

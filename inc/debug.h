@@ -40,4 +40,4 @@ ostream &operator<<(ostream &out, const Settings &settings);
 ostream &operator<<(ostream &out, const State &state);
 ostream &operator<<(ostream &out, const Question &question);
 
-#endif
+#endif /* DEBUG_H_ */

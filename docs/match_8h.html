@@ -66,7 +66,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">match.h File Reference</div>  </div>
@@ -76,18 +75,13 @@ $(function() {
 <p>This file defines maximum matching algorithm function headers.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="graph_8h_source.html">graph.h</a>&quot;</code><br />
 </div>
 <p><a href="match_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:abfa6cd99c250f01dc1230167eb64137b"><td class="memItemLeft" align="right" valign="top">typedef vector&lt; vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="match_8h.html#abfa6cd99c250f01dc1230167eb64137b">Graph</a></td></tr>
-<tr class="memdesc:abfa6cd99c250f01dc1230167eb64137b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bipartite graph where true booleans represent edges between a left node denoted as the row and a right node denoted as the column in the grid.  <a href="match_8h.html#abfa6cd99c250f01dc1230167eb64137b">More...</a><br /></td></tr>
-<tr class="separator:abfa6cd99c250f01dc1230167eb64137b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab73b44a855bd0643a89ad27ed65a0765"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="match_8h.html#ab73b44a855bd0643a89ad27ed65a0765">match_exists</a> (const <a class="el" href="match_8h.html#abfa6cd99c250f01dc1230167eb64137b">Graph</a> &amp;graph)</td></tr>
+<tr class="memitem:ab73b44a855bd0643a89ad27ed65a0765"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="match_8h.html#ab73b44a855bd0643a89ad27ed65a0765">match_exists</a> (const <a class="el" href="graph_8h.html#abfa6cd99c250f01dc1230167eb64137b">Graph</a> &amp;graph)</td></tr>
 <tr class="memdesc:ab73b44a855bd0643a89ad27ed65a0765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there exists a matching for <em>all</em> cards.  <a href="match_8h.html#ab73b44a855bd0643a89ad27ed65a0765">More...</a><br /></td></tr>
 <tr class="separator:ab73b44a855bd0643a89ad27ed65a0765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -95,26 +89,7 @@ Functions</h2></td></tr>
 <div class="textblock"><p>This file defines maximum matching algorithm function headers. </p>
 
 <p class="definition">Definition in file <a class="el" href="match_8h_source.html">match.h</a>.</p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="abfa6cd99c250f01dc1230167eb64137b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfa6cd99c250f01dc1230167eb64137b">&#9670;&nbsp;</a></span>Graph</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef vector&lt;vector&lt;bool&gt; &gt; <a class="el" href="match_8h.html#abfa6cd99c250f01dc1230167eb64137b">Graph</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A bipartite graph where true booleans represent edges between a left node denoted as the row and a right node denoted as the column in the grid. </p>
-
-<p class="definition">Definition at line <a class="el" href="match_8h_source.html#l00018">18</a> of file <a class="el" href="match_8h_source.html">match.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ab73b44a855bd0643a89ad27ed65a0765"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab73b44a855bd0643a89ad27ed65a0765">&#9670;&nbsp;</a></span>match_exists()</h2>
 
@@ -124,7 +99,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool match_exists </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="match_8h.html#abfa6cd99c250f01dc1230167eb64137b">Graph</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#abfa6cd99c250f01dc1230167eb64137b">Graph</a> &amp;&#160;</td>
           <td class="paramname"><em>graph</em></td><td>)</td>
           <td></td>
         </tr>

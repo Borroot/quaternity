@@ -9,13 +9,9 @@
 
 #include <vector>
 
-using namespace std;
+#include "graph.h"
 
-/**
- * @brief A bipartite graph where true booleans represent edges between a left
- * node denoted as the row and a right node denoted as the column in the grid.
- */
-typedef vector<vector<bool>> Graph;
+using namespace std;
 
 bool match_exists(const Graph &graph);
 

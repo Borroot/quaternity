@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_94',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['match_5fexists_95',['match_exists',['../match_8cpp.html#ab73b44a855bd0643a89ad27ed65a0765',1,'match_exists(const Graph &amp;graph):&#160;match.cpp'],['../match_8h.html#ab73b44a855bd0643a89ad27ed65a0765',1,'match_exists(const Graph &amp;graph):&#160;match.cpp']]]
+  ['init_5fcards_104',['init_cards',['../state_8cpp.html#a36220fea23214cf9540b53a321e3a5d8',1,'state.cpp']]],
+  ['init_5fplayers_105',['init_players',['../state_8cpp.html#a2b06c9f6753f87b097f3ed0fdea7604d',1,'state.cpp']]],
+  ['init_5fstate_106',['init_state',['../state_8cpp.html#ab6156b9ef17e2921a2e5406a6de579ff',1,'init_state(const Settings &amp;settings):&#160;state.cpp'],['../state_8h.html#ab6156b9ef17e2921a2e5406a6de579ff',1,'init_state(const Settings &amp;settings):&#160;state.cpp']]]
 ];

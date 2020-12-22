@@ -13,4 +13,4 @@
 Question ask_question();
 Answer ask_answer();
 
-#endif
+#endif /* INPUT_H_ */

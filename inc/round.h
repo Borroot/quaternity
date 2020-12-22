@@ -40,4 +40,4 @@ struct Question {
  */
 typedef bool Answer;
 
-#endif
+#endif /* ROUND_H_ */

@@ -43,4 +43,4 @@ struct Settings {
 	const int NUM_PLAYERS;
 };
 
-#endif
+#endif /* SETTINGS_H_ */

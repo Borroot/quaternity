@@ -17,7 +17,7 @@ bool dfs(const Graph &graph, int lnode, vector<bool> &seen, vector<int> &match)
 	for (size_t rnode = 0; rnode < graph.size(); rnode++) {
 		if (graph[lnode][rnode] && !seen[rnode]) {
 			seen[rnode] = true;
-			if (match[rnode] < 0 || bfs(graph, match[rnode], seen, match)) {
+			if (match[rnode] < 0 || dfs(graph, match[rnode], seen, match)) {
 				match[rnode] = lnode;
 				return true;
 			}

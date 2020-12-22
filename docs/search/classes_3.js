@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['settings_62',['Settings',['../structSettings.html',1,'']]],
-  ['state_63',['State',['../structState.html',1,'']]]
+  ['settings_69',['Settings',['../structSettings.html',1,'']]],
+  ['state_70',['State',['../structState.html',1,'']]]
 ];

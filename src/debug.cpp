@@ -16,7 +16,7 @@
 using namespace std;
 
 /**
- * Print the information of a card struct.
+ * @brief Print the information of a card struct.
  */
 ostream &operator<<(ostream &out, const Card &card)
 {
@@ -25,7 +25,7 @@ ostream &operator<<(ostream &out, const Card &card)
 }
 
 /**
- * Print the information of a player struct.
+ * @brief Print the information of a player struct.
  */
 ostream &operator<<(ostream &out, const Player &player)
 {
@@ -34,7 +34,7 @@ ostream &operator<<(ostream &out, const Player &player)
 }
 
 /**
- * Print the information of a settings struct.
+ * @brief Print the information of a settings struct.
  */
 ostream &operator<<(ostream &out, const Settings &settings)
 {
@@ -46,7 +46,7 @@ ostream &operator<<(ostream &out, const Settings &settings)
 }
 
 /**
- * Print the information of a state struct.
+ * @brief Print the information of a state struct.
  */
 ostream &operator<<(ostream &out, const State &state)
 {
@@ -57,7 +57,7 @@ ostream &operator<<(ostream &out, const State &state)
 }
 
 /**
- * Print the information of a question struct.
+ * @brief Print the information of a question struct.
  */
 ostream &operator<<(ostream &out, const Question &question)
 {

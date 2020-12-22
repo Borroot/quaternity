@@ -1,15 +1,15 @@
 /**
  * @file
  *
- * @brief This file defines functions which can check if a question or state is
- * valid.
+ * @brief This file defines functions which can check if a question,
+ * optionally plus answer, or state is valid.
  */
 
 #include <iostream>
 #include <vector>
-#include <numeric>
 
 #include "debug.h"
+#include "graph.h"
 #include "match.h"
 #include "round.h"
 #include "settings.h"
@@ -20,59 +20,58 @@
 using namespace std;
 
 /**
+ * @brief Check if there exists a matching for the given state.
+ *
+ * @see graph_possible
+ * @see graph_create
+ * @see match_exists
+ */
+bool valid_state(const Settings &settings, const State &state)
+{
+	if (!graph_possible(state)) return false;
+	Graph graph = graph_create(settings, state);
+
+	return match_exists(graph);
+}
+
+/**
  * @brief Check if the question asked and the answer given are valid.
  *
- * In other words, there is at least one valid assignment of all cards to the
- * players, after the question is asked and the answer is given.
+ * - If answer is yes we need to check the player does not already have the
+ *   card which is being asked for.
+ *   - If the asked player cannot have the card, return false.
+ *   - Update the state according to question.
+ *     - The player onturn has at least one card from asked set.
+ *     - Only the asked player could have the asked card.
+ *   - If there exists no matching, return false.
+ *
+ * - Update state according to question and answer.
+ * - Return if matching exists.
  */
 bool valid_answer(const Settings &settings, const State &state, const Question &question, const Answer &answer)
 {
-	// make a deep copy of the state which can be changed
+	if (answer) { // = yes
+		// make sure the asked player can have the card being asked
+		const int card = question.set * settings.SET_SIZE + question.card;
+		if (!state.cards[card].players[question.player]) return false;
+
+		State state_copy = copy_state(state);
+
+		// the player onturn has at least one card from the asked set
+		int *set = &state_copy.players[state_copy.onturn].sets[question.set];
+		if (*set == 0) *set = 1;
+
+		// the asked player has the card being asked
+		state_copy.cards[card].players = vector<bool>(settings.NUM_PLAYERS, false);
+		state_copy.cards[card].players[question.player] = true;
+
+		if (!valid_state(settings, state_copy)) return false;
+	}
+
 	State state_copy = copy_state(state);
 	update_state(settings, state_copy, question, answer);
 
-	// check that no player has more set constraints than cards
-	for (Player player: state_copy.players)
-		if (player.num_cards < accumulate(player.sets.begin(), player.sets.end(), 0))
-			return false;
-
-	// create the graph array and initialize all values to false
-	const int NUM_CARDS = settings.NUM_SETS * settings.SET_SIZE;
-	Graph graph(NUM_CARDS, vector<bool>(NUM_CARDS, false));
-
-	// set all the correct variables in the graph array
-	int hand_offset = 0;
-	for (int player_index = 0; player_index < settings.NUM_PLAYERS; player_index++) {
-		Player player = state_copy.players[player_index];
-		int hand_entry = 0;
-
-		for (int set_index = 0; set_index < settings.NUM_SETS; set_index++) {
-			int set = player.sets[set_index];
-
-			while (set-- > 0) {
-				for (int set_card = 0; set_card < settings.SET_SIZE; set_card++) {
-					int card = set_index * settings.SET_SIZE + set_card;
-
-					if (state_copy.cards[card].players[player_index] && !(player_index == state_copy.onturn && card == question.card))
-						graph[hand_offset + hand_entry][card] = true;
-				}
-				hand_entry++;
-			}
-		}
-
-		while (hand_entry < player.num_cards) {
-			for (int card = 0; card < NUM_CARDS; card++)
-				if (state_copy.cards[card].players[player_index] && !(player_index == state_copy.onturn && card == question.card))
-					graph[hand_offset + hand_entry][card] = true;
-			hand_entry++;
-		}
-
-		hand_offset += player.num_cards;
-	}
-
-	// TODO Do not allow someone to ask for a card they always have themselves.
-	cout << state_copy;
-	return match_exists(graph);
+	return valid_state(settings, state_copy);
 }
 
 /**

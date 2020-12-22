@@ -86,4 +86,4 @@ struct State {
 State init_state(const Settings &settings);
 State copy_state(const State &state);
 
-#endif
+#endif /* STATE_H_ */

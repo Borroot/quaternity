@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['valid_101',['valid',['../opts_8cpp.html#a6dc45e9081181c08d7044322e89a1565',1,'opts.cpp']]],
-  ['valid_5fanswer_102',['valid_answer',['../validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6',1,'valid_answer(const Settings &amp;settings, const State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;validate.cpp'],['../validate_8h.html#a5e12ba62fd3b3050bf284205cde1acc6',1,'valid_answer(const Settings &amp;settings, const State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;validate.cpp']]],
-  ['valid_5fquestion_103',['valid_question',['../validate_8cpp.html#af443dae2c6c3e9813f45f272f00a196c',1,'valid_question(const Settings &amp;settings, const State &amp;state, const Question &amp;question):&#160;validate.cpp'],['../validate_8h.html#af443dae2c6c3e9813f45f272f00a196c',1,'valid_question(const Settings &amp;settings, const State &amp;state, const Question &amp;question):&#160;validate.cpp']]]
+  ['update_5fstate_112',['update_state',['../update_8cpp.html#a43259ea462b7339aedd9d3dfc80e0c5a',1,'update_state(const Settings &amp;settings, State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;update.cpp'],['../update_8h.html#a43259ea462b7339aedd9d3dfc80e0c5a',1,'update_state(const Settings &amp;settings, State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;update.cpp']]],
+  ['usage_113',['usage',['../opts_8cpp.html#a908717877c0007ebbe891334c75991ec',1,'opts.cpp']]]
 ];

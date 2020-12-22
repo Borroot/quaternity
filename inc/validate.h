@@ -13,6 +13,5 @@
 #include "state.h"
 
 bool *valid_question(const Settings &settings, const State &state, const Question &question);
-bool  valid_answer(const Settings &settings, const State &state, const Question &question, const Answer &answer);
 
-#endif
+#endif /* VALIDATE_H_ */

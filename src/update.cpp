@@ -40,7 +40,7 @@ void update_state(const Settings &settings, State &state, const Question &questi
 {
 	const int card = question.set * settings.SET_SIZE + question.card;
 
-	// update the set restrictions based on question
+	// update the set restriction of the player onturn
 	int *set = &state.players[state.onturn].sets[question.set];
 	if (*set == 0) *set = 1;
 
