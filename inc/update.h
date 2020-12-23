@@ -13,6 +13,5 @@
 #include "state.h"
 
 void update_state(const Settings &settings, State &state, const Question &question, const Answer &answer);
-void update_quartets(const Settings &settings, State &state);
 
 #endif /* UPDATE */

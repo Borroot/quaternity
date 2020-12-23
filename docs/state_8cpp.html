@@ -74,7 +74,8 @@ $(function() {
 
 <p>This file defines state initialization and copy functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="settings_8h_source.html">settings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="state_8h_source.html">state.h</a>&quot;</code><br />
 </div>
@@ -100,6 +101,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a3598122f70e1d70799aee206bf3d4a4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structState.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8cpp.html#a3598122f70e1d70799aee206bf3d4a4b">copy_state</a> (const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
 <tr class="memdesc:a3598122f70e1d70799aee206bf3d4a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the old state to a new state.  <a href="state_8cpp.html#a3598122f70e1d70799aee206bf3d4a4b">More...</a><br /></td></tr>
 <tr class="separator:a3598122f70e1d70799aee206bf3d4a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa548f14bfff4d0fb2d1fa0983cb77064"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8cpp.html#aa548f14bfff4d0fb2d1fa0983cb77064">info_num_quartets</a> (const <a class="el" href="structState.html">State</a> &amp;state, int player)</td></tr>
+<tr class="separator:aa548f14bfff4d0fb2d1fa0983cb77064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1837e63a84bf784b845d6b685d757f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8cpp.html#ac1837e63a84bf784b845d6b685d757f5">info_num_cards</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state, int player)</td></tr>
+<tr class="separator:ac1837e63a84bf784b845d6b685d757f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file defines state initialization and copy functions. </p>
@@ -124,15 +129,15 @@ Functions</h2></td></tr>
 
 <p>Copy the old cards vector to a new cards vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00066">66</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::vector&lt;Card&gt; cards_copy;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structCard.html">Card</a> card: cards) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="structCard.html">Card</a> card_copy = {card.<a class="code" href="structCard.html#a80d01adc4c72330bd23245f12a551bde">players</a>};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        cards_copy.push_back(card_copy);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> cards_copy;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00067">67</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::vector&lt;Card&gt; cards_copy;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structCard.html">Card</a> card: cards) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="structCard.html">Card</a> card_copy = {card.<a class="code" href="structCard.html#a80d01adc4c72330bd23245f12a551bde">players</a>};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        cards_copy.push_back(card_copy);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> cards_copy;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -154,15 +159,15 @@ Functions</h2></td></tr>
 
 <p>Copy the old player vector to a new player vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00079">79</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::vector&lt;Player&gt; players_copy;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structPlayer.html">Player</a> player: players) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="structPlayer.html">Player</a> player_copy = {player.<a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a>, player.sets};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        players_copy.push_back(player_copy);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> players;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00080">80</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::vector&lt;Player&gt; players_copy;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structPlayer.html">Player</a> player: players) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="structPlayer.html">Player</a> player_copy = {player.<a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a>, player.sets};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        players_copy.push_back(player_copy);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> players;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -187,10 +192,82 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="state_8cpp.html#aaf7364e517ec07be2eb633ecc7e02684" title="Copy the old player vector to a new player vector.">copy_players</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00095">95</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structState.html">State</a>{state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a>, <a class="code" href="state_8cpp.html#a4da92679c61bc5ac2cfe35a8294dd5d1">copy_cards</a>(state.<a class="code" href="structState.html#a7ff72023586f1fa27512f4142f4f98af">cards</a>), <a class="code" href="state_8cpp.html#aaf7364e517ec07be2eb633ecc7e02684">copy_players</a>(state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>), state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00096">96</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structState.html">State</a>{state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a>, <a class="code" href="state_8cpp.html#a4da92679c61bc5ac2cfe35a8294dd5d1">copy_cards</a>(state.<a class="code" href="structState.html#a7ff72023586f1fa27512f4142f4f98af">cards</a>), <a class="code" href="state_8cpp.html#aaf7364e517ec07be2eb633ecc7e02684">copy_players</a>(state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>), state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac1837e63a84bf784b845d6b685d757f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1837e63a84bf784b845d6b685d757f5">&#9670;&nbsp;</a></span>info_num_cards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int info_num_cards </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSettings.html">Settings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structState.html">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00106">106</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[player].num_cards - settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a> * <a class="code" href="state_8cpp.html#aa548f14bfff4d0fb2d1fa0983cb77064">info_num_quartets</a>(state, player);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa548f14bfff4d0fb2d1fa0983cb77064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa548f14bfff4d0fb2d1fa0983cb77064">&#9670;&nbsp;</a></span>info_num_quartets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int info_num_quartets </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structState.html">State</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00101">101</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> std::count(state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>.begin(), state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>.end(), player);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,15 +290,15 @@ Functions</h2></td></tr>
 <p>Initialize the cards corresponding to the given settings. </p>
 <p>The players vector for every card will be initilialized to all true, because at the start every player could have that card. There are a total of <code>SET_SIZE * NUM_SETS</code> cards which will be generated. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00019">19</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::vector&lt;Card&gt; cards;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a> * settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; i++) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="structCard.html">Card</a> card = {std::vector&lt;bool&gt;(settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>, <span class="keyword">true</span>)};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        cards.push_back(card);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> cards;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00020">20</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::vector&lt;Card&gt; cards;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a> * settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>; i++) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structCard.html">Card</a> card = {std::vector&lt;bool&gt;(settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>, <span class="keyword">true</span>)};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cards.push_back(card);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> cards;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,16 +321,16 @@ Functions</h2></td></tr>
 <p>Initialize the players corresponding to the given settings. </p>
 <p>The cards are equally distributed among the players which means that every player will start with <code>(NUM_SETS * SET_SIZE) / NUM_PLAYERS</code> amount of cards. They further have the sets vector initialized to all zeros because they do not need to have any specific set at the start. </p>
 
-<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00037">37</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> NUM_CARDS = (settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a> * settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) / settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector&lt;Player&gt; players;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    for (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; i++) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structPlayer.html">Player</a> player = {NUM_CARDS, std::vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0)};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        players.push_back(player);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> players;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00038">38</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> NUM_CARDS = (settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a> * settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) / settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt;Player&gt; players;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    for (<span class="keywordtype">int</span> i = 0; i &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; i++) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="structPlayer.html">Player</a> player = {NUM_CARDS, std::vector&lt;int&gt;(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, 0)};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        players.push_back(player);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> players;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -279,30 +356,31 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="state_8cpp.html#af2dc1c7c1124fd43448e2cef2c647439" title="Initialize the players corresponding to the given settings.">init_players</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00057">57</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::vector&lt;int&gt; quartets(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, -1);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structState.html">State</a>{0, <a class="code" href="state_8cpp.html#aa4f659b95549e7e3be44bb9a2e8814be">init_cards</a>(settings), <a class="code" href="state_8cpp.html#af2dc1c7c1124fd43448e2cef2c647439">init_players</a>(settings), quartets};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="state_8cpp_source.html#l00058">58</a> of file <a class="el" href="state_8cpp_source.html">state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::vector&lt;int&gt; quartets(settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>, -1);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structState.html">State</a>{0, <a class="code" href="state_8cpp.html#aa4f659b95549e7e3be44bb9a2e8814be">init_cards</a>(settings), <a class="code" href="state_8cpp.html#af2dc1c7c1124fd43448e2cef2c647439">init_players</a>(settings), quartets};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="astructSettings_html_a78cf5ed18d69ce74d769a4a9058154c5"><div class="ttname"><a href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">Settings::SET_SIZE</a></div><div class="ttdeci">const int SET_SIZE</div><div class="ttdoc">The size of one set, aka the number of cards in one set.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00027">settings.h:27</a></div></div>
-<div class="ttc" id="astate_8cpp_html_af2dc1c7c1124fd43448e2cef2c647439"><div class="ttname"><a href="state_8cpp.html#af2dc1c7c1124fd43448e2cef2c647439">init_players</a></div><div class="ttdeci">std::vector&lt; Player &gt; init_players(const Settings &amp;settings)</div><div class="ttdoc">Initialize the players corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00037">state.cpp:37</a></div></div>
-<div class="ttc" id="astate_8cpp_html_aaf7364e517ec07be2eb633ecc7e02684"><div class="ttname"><a href="state_8cpp.html#aaf7364e517ec07be2eb633ecc7e02684">copy_players</a></div><div class="ttdeci">std::vector&lt; Player &gt; copy_players(const std::vector&lt; Player &gt; players)</div><div class="ttdoc">Copy the old player vector to a new player vector.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00079">state.cpp:79</a></div></div>
+<div class="ttc" id="astate_8cpp_html_af2dc1c7c1124fd43448e2cef2c647439"><div class="ttname"><a href="state_8cpp.html#af2dc1c7c1124fd43448e2cef2c647439">init_players</a></div><div class="ttdeci">std::vector&lt; Player &gt; init_players(const Settings &amp;settings)</div><div class="ttdoc">Initialize the players corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00038">state.cpp:38</a></div></div>
+<div class="ttc" id="astate_8cpp_html_aaf7364e517ec07be2eb633ecc7e02684"><div class="ttname"><a href="state_8cpp.html#aaf7364e517ec07be2eb633ecc7e02684">copy_players</a></div><div class="ttdeci">std::vector&lt; Player &gt; copy_players(const std::vector&lt; Player &gt; players)</div><div class="ttdoc">Copy the old player vector to a new player vector.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00080">state.cpp:80</a></div></div>
 <div class="ttc" id="astructSettings_html_a86e8b42ad2fcbb6bb68f2b02b932899a"><div class="ttname"><a href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">Settings::NUM_PLAYERS</a></div><div class="ttdeci">const int NUM_PLAYERS</div><div class="ttdoc">The number of players playing the game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00037">settings.h:37</a></div></div>
 <div class="ttc" id="astructState_html_a4183466316e6a008061fdf0871d1cc87"><div class="ttname"><a href="structState.html#a4183466316e6a008061fdf0871d1cc87">State::players</a></div><div class="ttdeci">std::vector&lt; Player &gt; players</div><div class="ttdoc">The information on all the players.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00081">state.h:81</a></div></div>
 <div class="ttc" id="astructCard_html"><div class="ttname"><a href="structCard.html">Card</a></div><div class="ttdoc">The information connected to a card.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00019">state.h:19</a></div></div>
 <div class="ttc" id="astructCard_html_a80d01adc4c72330bd23245f12a551bde"><div class="ttname"><a href="structCard.html#a80d01adc4c72330bd23245f12a551bde">Card::players</a></div><div class="ttdeci">std::vector&lt; bool &gt; players</div><div class="ttdoc">The players which could have this card.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00028">state.h:28</a></div></div>
 <div class="ttc" id="astructState_html_aaca9c1ef9cdf14200593649ac8bf370b"><div class="ttname"><a href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">State::quartets</a></div><div class="ttdeci">std::vector&lt; int &gt; quartets</div><div class="ttdoc">The information of who has a certain quartet.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00090">state.h:90</a></div></div>
-<div class="ttc" id="astate_8cpp_html_aa4f659b95549e7e3be44bb9a2e8814be"><div class="ttname"><a href="state_8cpp.html#aa4f659b95549e7e3be44bb9a2e8814be">init_cards</a></div><div class="ttdeci">std::vector&lt; Card &gt; init_cards(const Settings &amp;settings)</div><div class="ttdoc">Initialize the cards corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00019">state.cpp:19</a></div></div>
-<div class="ttc" id="astate_8cpp_html_a4da92679c61bc5ac2cfe35a8294dd5d1"><div class="ttname"><a href="state_8cpp.html#a4da92679c61bc5ac2cfe35a8294dd5d1">copy_cards</a></div><div class="ttdeci">std::vector&lt; Card &gt; copy_cards(const std::vector&lt; Card &gt; cards)</div><div class="ttdoc">Copy the old cards vector to a new cards vector.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00066">state.cpp:66</a></div></div>
+<div class="ttc" id="astate_8cpp_html_aa4f659b95549e7e3be44bb9a2e8814be"><div class="ttname"><a href="state_8cpp.html#aa4f659b95549e7e3be44bb9a2e8814be">init_cards</a></div><div class="ttdeci">std::vector&lt; Card &gt; init_cards(const Settings &amp;settings)</div><div class="ttdoc">Initialize the cards corresponding to the given settings.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00020">state.cpp:20</a></div></div>
+<div class="ttc" id="astate_8cpp_html_a4da92679c61bc5ac2cfe35a8294dd5d1"><div class="ttname"><a href="state_8cpp.html#a4da92679c61bc5ac2cfe35a8294dd5d1">copy_cards</a></div><div class="ttdeci">std::vector&lt; Card &gt; copy_cards(const std::vector&lt; Card &gt; cards)</div><div class="ttdoc">Copy the old cards vector to a new cards vector.</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00067">state.cpp:67</a></div></div>
 <div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdoc">The number of sets.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00032">settings.h:32</a></div></div>
 <div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdoc">The information connected to a player.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00034">state.h:34</a></div></div>
 <div class="ttc" id="astructState_html"><div class="ttname"><a href="structState.html">State</a></div><div class="ttdoc">The complete game state.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00057">state.h:57</a></div></div>
 <div class="ttc" id="astructPlayer_html_a83bd29acbedad8704d10a21cc81c195a"><div class="ttname"><a href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">Player::num_cards</a></div><div class="ttdeci">int num_cards</div><div class="ttdoc">The number of cards this player has.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00039">state.h:39</a></div></div>
 <div class="ttc" id="astructState_html_a8473e0f33782aa5732beb378a228d383"><div class="ttname"><a href="structState.html#a8473e0f33782aa5732beb378a228d383">State::onturn</a></div><div class="ttdeci">int onturn</div><div class="ttdoc">The player who is on turn.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00062">state.h:62</a></div></div>
+<div class="ttc" id="astate_8cpp_html_aa548f14bfff4d0fb2d1fa0983cb77064"><div class="ttname"><a href="state_8cpp.html#aa548f14bfff4d0fb2d1fa0983cb77064">info_num_quartets</a></div><div class="ttdeci">int info_num_quartets(const State &amp;state, int player)</div><div class="ttdef"><b>Definition:</b> <a href="state_8cpp_source.html#l00101">state.cpp:101</a></div></div>
 <div class="ttc" id="astructState_html_a7ff72023586f1fa27512f4142f4f98af"><div class="ttname"><a href="structState.html#a7ff72023586f1fa27512f4142f4f98af">State::cards</a></div><div class="ttdeci">std::vector&lt; Card &gt; cards</div><div class="ttdoc">The information on all the cards.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00074">state.h:74</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

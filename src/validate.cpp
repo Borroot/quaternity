@@ -27,7 +27,7 @@
  */
 bool valid_state(const Settings &settings, const State &state)
 {
-	if (!graph_possible(state)) return false;
+	if (!graph_possible(settings, state)) return false;
 	Graph graph = graph_create(settings, state);
 
 	return match_exists(graph);
@@ -113,8 +113,7 @@ bool *valid_question(const Settings &settings, const State &state, const Questio
 		return NULL;
 	}
 
-	int num_quartets = std::count(state.quartets.begin(), state.quartets.end(), question.player);
-	if (state.players[question.player].num_cards - num_quartets < 1) {
+	if (info_num_cards(settings, state, question.player) < 1) {
 		std::cerr << "Player " << question.player << " does not have any cards." << std::endl;
 		return NULL;
 	}

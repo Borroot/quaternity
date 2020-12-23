@@ -93,4 +93,7 @@ struct State {
 State init_state(const Settings &settings);
 State copy_state(const State &state);
 
+int info_num_quartets(const State &state, int player);
+int info_num_cards(const Settings &settings, const State &state, int player);
+
 #endif /* STATE_H_ */

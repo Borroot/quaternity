@@ -36,12 +36,8 @@ int main(int argc, char **argv)
 			std::cout << "Answer: " << answer << "." << std::endl;
 		} while (!valid_answers[answer]);
 
-		// STATE
+		// UPDATE STATE
 		update_state(settings, state, question, answer);
-		std::cout << state;
-
-		// QUARTETS
-		update_quartets(settings, state);
 		std::cout << state;
 	}
 

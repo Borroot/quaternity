@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['update_2ecpp_59',['update.cpp',['../update_8cpp.html',1,'']]],
-  ['update_2eh_60',['update.h',['../update_8h.html',1,'']]],
-  ['update_5fquartet_61',['update_quartet',['../update_8cpp.html#ad95056944c24a7a55877c58475d50f11',1,'update.cpp']]],
-  ['update_5fquartets_62',['update_quartets',['../update_8cpp.html#a4c9b36505af90317fc21fa489b8958d6',1,'update_quartets(const Settings &amp;settings, State &amp;state):&#160;update.cpp'],['../update_8h.html#a4c9b36505af90317fc21fa489b8958d6',1,'update_quartets(const Settings &amp;settings, State &amp;state):&#160;update.cpp']]],
-  ['update_5fstate_63',['update_state',['../update_8cpp.html#a43259ea462b7339aedd9d3dfc80e0c5a',1,'update_state(const Settings &amp;settings, State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;update.cpp'],['../update_8h.html#a43259ea462b7339aedd9d3dfc80e0c5a',1,'update_state(const Settings &amp;settings, State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;update.cpp']]],
-  ['usage_64',['usage',['../opts_8cpp.html#a2e8cb9e25d1ab9ef0f8f4641b8902903',1,'opts.cpp']]]
+  ['update_2ecpp_61',['update.cpp',['../update_8cpp.html',1,'']]],
+  ['update_2eh_62',['update.h',['../update_8h.html',1,'']]],
+  ['update_5fonturn_63',['update_onturn',['../update_8cpp.html#a05e0bd8b6c4e581dd20efe05e646fe05',1,'update.cpp']]],
+  ['update_5fquartet_64',['update_quartet',['../update_8cpp.html#ade7f3b6e3f5bf3f465146e9453421626',1,'update.cpp']]],
+  ['update_5fquartets_65',['update_quartets',['../update_8cpp.html#ab8c57cbb0958b7b1bfba8337ebac541b',1,'update.cpp']]],
+  ['update_5fstate_66',['update_state',['../update_8cpp.html#a43259ea462b7339aedd9d3dfc80e0c5a',1,'update_state(const Settings &amp;settings, State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;update.cpp'],['../update_8h.html#a43259ea462b7339aedd9d3dfc80e0c5a',1,'update_state(const Settings &amp;settings, State &amp;state, const Question &amp;question, const Answer &amp;answer):&#160;update.cpp']]],
+  ['usage_67',['usage',['../opts_8cpp.html#a2e8cb9e25d1ab9ef0f8f4641b8902903',1,'opts.cpp']]]
 ];

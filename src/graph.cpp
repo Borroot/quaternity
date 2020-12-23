@@ -33,12 +33,11 @@ Graph graph_copy(const Graph graph)
  *
  * @return true if possible
  */
-bool graph_possible(const State &state)
+bool graph_possible(const Settings &settings, const State &state)
 {
 	for (size_t player = 0; player < state.players.size(); player++) {
 		int total = accumulate(state.players[player].sets.begin(), state.players[player].sets.end(), 0);
-		int num_quartets = std::count(state.quartets.begin(), state.quartets.end(), player);
-		if (state.players[player].num_cards - num_quartets < total)
+		if (info_num_cards(settings, state, player) < total)
 			return false;
 	}
 	return true;
@@ -103,7 +102,7 @@ void graph_player(const Settings &settings, const State &state, Graph &graph, in
  */
 Graph graph_create(const Settings &settings, const State &state)
 {
-	assert(graph_possible(state));  // make sure we can create a graph
+	assert(graph_possible(settings, state));  // make sure we can create a graph
 
 	// create the graph array and initialize all values to false
 	const int NUM_CARDS = settings.NUM_SETS * settings.SET_SIZE;

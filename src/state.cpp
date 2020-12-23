@@ -4,6 +4,7 @@
  * @brief This file defines state initialization and copy functions.
  */
 
+#include <algorithm>
 #include <vector>
 
 #include "settings.h"
@@ -95,4 +96,14 @@ std::vector<Player> copy_players(const std::vector<Player> players)
 State copy_state(const State &state)
 {
 	return State{state.onturn, copy_cards(state.cards), copy_players(state.players), state.quartets};
+}
+
+int info_num_quartets(const State &state, int player)
+{
+	return std::count(state.quartets.begin(), state.quartets.end(), player);
+}
+
+int info_num_cards(const Settings &settings, const State &state, int player)
+{
+	return state.players[player].num_cards - settings.SET_SIZE * info_num_quartets(state, player);
 }
