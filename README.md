@@ -18,7 +18,7 @@ If a player has all the cards from a certain set, then these cards will be remov
 
 There is a special situation when player _x_ receives a card from player _y_, player _x_ finishes a set with this card and player _x_ has no additional cards from other sets then player _x_'s hands are empty at the end of its turn. Player _x_ will be on turn again, but since its hands are empty there are no valid questions. So in this case instead of handing over the turn to player _x_ again the turn will go to player _y_.
 
-If player _y_ also does not have any cards left, we choose the player with the least amount of quartets to be on turn. If there are multiple players with the least amount of quartets, we choose from these players the one with the least amount of cards left in their hands. If this also ties, we choose a random player from these final players.
+If player _y_ also does not have any cards left, we choose the first player with cards from a randomly predetermined order of players. This player will have a slight advantage over the other players, but since this situation is rare it should not make a big difference. To make it as fair as possible make sure to randomize or rotate the predetermined order of players after every round.
 
 ### End of the game
 The game finishes when all the sets have been completed and thus when every player has no cards in their hands. The player with the most points (completed sets) wins. If there are multiple people with the same amount of sets then everyone loses.
