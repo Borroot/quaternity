@@ -79,6 +79,15 @@ struct State {
 	 * This is where it is defined who is player 0, 1, etc.
 	 */
 	std::vector<Player> players;
+
+	/**
+	 * @brief The information of who has a certain quartet.
+	 *
+	 * The quartet array contains `NUM_SETS` entries, so one for every set, if
+	 * the entry is -1, no one has the full set, if someone does have the
+	 * quartet the entry is equal to the player index who has the quartet.
+	 */
+	std::vector<int> quartets;
 };
 
 State init_state(const Settings &settings);

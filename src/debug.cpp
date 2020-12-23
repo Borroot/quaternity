@@ -48,9 +48,10 @@ std::ostream &operator<<(std::ostream &out, const Settings &settings)
  */
 std::ostream &operator<<(std::ostream &out, const State &state)
 {
-	out << "Onturn: "  << state.onturn  << std::endl
-	    << "Cards: "   << state.cards   << std::endl
-	    << "Players: " << state.players << std::endl;
+	out << "Onturn: "   << state.onturn   << std::endl
+	    << "Cards: "    << state.cards    << std::endl
+	    << "Players: "  << state.players  << std::endl
+	    << "Quartets: " << state.quartets << std::endl;
 	return out;
 }
 

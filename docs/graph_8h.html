@@ -92,6 +92,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a031a977a486207345e90b5d72b8b99bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a031a977a486207345e90b5d72b8b99bf">graph_possible</a> (const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
 <tr class="memdesc:a031a977a486207345e90b5d72b8b99bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if it is possible to create a graph.  <a href="graph_8h.html#a031a977a486207345e90b5d72b8b99bf">More...</a><br /></td></tr>
 <tr class="separator:a031a977a486207345e90b5d72b8b99bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c22c160511322ae746aea860671df4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#aa5c22c160511322ae746aea860671df4">graph_copy</a> (const <a class="el" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a> graph)</td></tr>
+<tr class="memdesc:aa5c22c160511322ae746aea860671df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a copy of the given graph.  <a href="graph_8h.html#aa5c22c160511322ae746aea860671df4">More...</a><br /></td></tr>
+<tr class="separator:aa5c22c160511322ae746aea860671df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af03096c2fe0f390705176a42529c71df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#af03096c2fe0f390705176a42529c71df">graph_create</a> (const <a class="el" href="structSettings.html">Settings</a> &amp;settings, const <a class="el" href="structState.html">State</a> &amp;state)</td></tr>
 <tr class="memdesc:af03096c2fe0f390705176a42529c71df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a biparite graph which has a matching if the state is valid.  <a href="graph_8h.html#af03096c2fe0f390705176a42529c71df">More...</a><br /></td></tr>
 <tr class="separator:af03096c2fe0f390705176a42529c71df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,6 +123,35 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa5c22c160511322ae746aea860671df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5c22c160511322ae746aea860671df4">&#9670;&nbsp;</a></span>graph_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a> graph_copy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a>&#160;</td>
+          <td class="paramname"><em>graph</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a copy of the given graph. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00019">19</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a> graph_clone(graph.size(), std::vector&lt;bool&gt;(graph.size()));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; graph.size(); i++)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; graph[i].size(); j++)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            graph_clone[i][j] = graph[i][j];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> graph_clone;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af03096c2fe0f390705176a42529c71df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af03096c2fe0f390705176a42529c71df">&#9670;&nbsp;</a></span>graph_create()</h2>
 
@@ -150,23 +182,23 @@ Functions</h2></td></tr>
 <p>The graph is represented as a 2d array where every cell is an edge between the left node (row number) and the right node (column number). We go through all the players and add the constraints corresponding to that player's possible hands.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="graph_8cpp.html#a836d71bb2b2c6c30c86d59b7296e154d" title="Add all the edges representing the given player.">graph_player</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00088">88</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    assert(<a class="code" href="graph_8cpp.html#a031a977a486207345e90b5d72b8b99bf">graph_possible</a>(state));  <span class="comment">// make sure we can create a graph</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// create the graph array and initialize all values to false</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> NUM_CARDS = settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a> * settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a> graph(NUM_CARDS, std::vector&lt;bool&gt;(NUM_CARDS, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// set the corresponding edges for all players</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> hand_offset = 0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="graph_8cpp.html#a836d71bb2b2c6c30c86d59b7296e154d">graph_player</a>(settings, state, graph, player, hand_offset);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        hand_offset += state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[player].num_cards;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> graph;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00104">104</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    assert(<a class="code" href="graph_8cpp.html#a031a977a486207345e90b5d72b8b99bf">graph_possible</a>(state));  <span class="comment">// make sure we can create a graph</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// create the graph array and initialize all values to false</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> NUM_CARDS = settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a> * settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a> graph(NUM_CARDS, std::vector&lt;bool&gt;(NUM_CARDS, <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// set the corresponding edges for all players</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> hand_offset = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> player = 0; player &lt; settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>; player++) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="graph_8cpp.html#a836d71bb2b2c6c30c86d59b7296e154d">graph_player</a>(settings, state, graph, player, hand_offset);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        hand_offset += state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[player].num_cards;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> graph;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,13 +222,16 @@ Functions</h2></td></tr>
 <p>More specifically, check that no player's total number of set constraints is bigger than the number of cards that player has.</p>
 <dl class="section return"><dt>Returns</dt><dd>true if possible </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00023">23</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structPlayer.html">Player</a> player: state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (player.<a class="code" href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">num_cards</a> &lt; accumulate(player.<a class="code" href="structPlayer.html#a69ab67c4b0ff97b2ffe7827950b3a3d0">sets</a>.begin(), player.<a class="code" href="structPlayer.html#a69ab67c4b0ff97b2ffe7827950b3a3d0">sets</a>.end(), 0))</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00036">36</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> player = 0; player &lt; state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>.size(); player++) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">int</span> total = accumulate(state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[player].sets.begin(), state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[player].sets.end(), 0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">int</span> num_quartets = std::count(state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>.begin(), state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>.end(), player);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[player].num_cards - num_quartets &lt; total)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -204,13 +239,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructSettings_html_a78cf5ed18d69ce74d769a4a9058154c5"><div class="ttname"><a href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">Settings::SET_SIZE</a></div><div class="ttdeci">const int SET_SIZE</div><div class="ttdoc">The size of one set, aka the number of cards in one set.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00027">settings.h:27</a></div></div>
 <div class="ttc" id="astructSettings_html_a86e8b42ad2fcbb6bb68f2b02b932899a"><div class="ttname"><a href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">Settings::NUM_PLAYERS</a></div><div class="ttdeci">const int NUM_PLAYERS</div><div class="ttdoc">The number of players playing the game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00037">settings.h:37</a></div></div>
 <div class="ttc" id="astructState_html_a4183466316e6a008061fdf0871d1cc87"><div class="ttname"><a href="structState.html#a4183466316e6a008061fdf0871d1cc87">State::players</a></div><div class="ttdeci">std::vector&lt; Player &gt; players</div><div class="ttdoc">The information on all the players.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00081">state.h:81</a></div></div>
-<div class="ttc" id="agraph_8cpp_html_a836d71bb2b2c6c30c86d59b7296e154d"><div class="ttname"><a href="graph_8cpp.html#a836d71bb2b2c6c30c86d59b7296e154d">graph_player</a></div><div class="ttdeci">void graph_player(const Settings &amp;settings, const State &amp;state, Graph &amp;graph, int player, int hand_offset)</div><div class="ttdoc">Add all the edges representing the given player.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00060">graph.cpp:60</a></div></div>
+<div class="ttc" id="agraph_8cpp_html_a836d71bb2b2c6c30c86d59b7296e154d"><div class="ttname"><a href="graph_8cpp.html#a836d71bb2b2c6c30c86d59b7296e154d">graph_player</a></div><div class="ttdeci">void graph_player(const Settings &amp;settings, const State &amp;state, Graph &amp;graph, int player, int hand_offset)</div><div class="ttdoc">Add all the edges representing the given player.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00076">graph.cpp:76</a></div></div>
+<div class="ttc" id="astructState_html_aaca9c1ef9cdf14200593649ac8bf370b"><div class="ttname"><a href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">State::quartets</a></div><div class="ttdeci">std::vector&lt; int &gt; quartets</div><div class="ttdoc">The information of who has a certain quartet.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00090">state.h:90</a></div></div>
 <div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdoc">The number of sets.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00032">settings.h:32</a></div></div>
-<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdoc">The information connected to a player.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00034">state.h:34</a></div></div>
-<div class="ttc" id="agraph_8cpp_html_a031a977a486207345e90b5d72b8b99bf"><div class="ttname"><a href="graph_8cpp.html#a031a977a486207345e90b5d72b8b99bf">graph_possible</a></div><div class="ttdeci">bool graph_possible(const State &amp;state)</div><div class="ttdoc">Check if it is possible to create a graph.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00023">graph.cpp:23</a></div></div>
-<div class="ttc" id="astructPlayer_html_a83bd29acbedad8704d10a21cc81c195a"><div class="ttname"><a href="structPlayer.html#a83bd29acbedad8704d10a21cc81c195a">Player::num_cards</a></div><div class="ttdeci">int num_cards</div><div class="ttdoc">The number of cards this player has.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00039">state.h:39</a></div></div>
+<div class="ttc" id="agraph_8cpp_html_a031a977a486207345e90b5d72b8b99bf"><div class="ttname"><a href="graph_8cpp.html#a031a977a486207345e90b5d72b8b99bf">graph_possible</a></div><div class="ttdeci">bool graph_possible(const State &amp;state)</div><div class="ttdoc">Check if it is possible to create a graph.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8cpp_source.html#l00036">graph.cpp:36</a></div></div>
 <div class="ttc" id="agraph_8h_html_a3916589f387213c83aa4ebb9d4ade8c7"><div class="ttname"><a href="graph_8h.html#a3916589f387213c83aa4ebb9d4ade8c7">Graph</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; bool &gt; &gt; Graph</div><div class="ttdoc">A bipartite graph where true booleans represent edges between a left node denoted as the row and a ri...</div><div class="ttdef"><b>Definition:</b> <a href="graph_8h_source.html#l00019">graph.h:19</a></div></div>
-<div class="ttc" id="astructPlayer_html_a69ab67c4b0ff97b2ffe7827950b3a3d0"><div class="ttname"><a href="structPlayer.html#a69ab67c4b0ff97b2ffe7827950b3a3d0">Player::sets</a></div><div class="ttdeci">std::vector&lt; int &gt; sets</div><div class="ttdoc">The number of cards the player at least has from a certain set.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00048">state.h:48</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

@@ -19,6 +19,7 @@
 typedef std::vector<std::vector<bool>> Graph;
 
 bool  graph_possible(const State &state);
+Graph graph_copy(const Graph graph);
 Graph graph_create(const Settings &settings, const State &state);
 
 #endif /* GRAPH_H_ */

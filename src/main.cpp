@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
 
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
 	std::cout << settings;
 	std::cout << state;
 
-	while (true) { // not game over
+	while (std::find(state.quartets.begin(), state.quartets.end(), -1) != state.quartets.end()) {
 		bool *valid_answers;
 
 		// QUESTION
@@ -35,7 +36,12 @@ int main(int argc, char **argv)
 			std::cout << "Answer: " << answer << "." << std::endl;
 		} while (!valid_answers[answer]);
 
+		// STATE
 		update_state(settings, state, question, answer);
+		std::cout << state;
+
+		// QUARTETS
+		update_quartets(settings, state);
 		std::cout << state;
 	}
 

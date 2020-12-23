@@ -4,6 +4,7 @@
  * @brief This file defines the graph creation functions.
  */
 
+#include <algorithm>
 #include <cassert>
 #include <numeric>
 #include <vector>
@@ -11,6 +12,18 @@
 #include "graph.h"
 #include "settings.h"
 #include "state.h"
+
+/**
+ * @brief Create a copy of the given graph.
+ */
+Graph graph_copy(const Graph graph)
+{
+	Graph graph_clone(graph.size(), std::vector<bool>(graph.size()));
+	for (size_t i = 0; i < graph.size(); i++)
+		for (size_t j = 0; j < graph[i].size(); j++)
+			graph_clone[i][j] = graph[i][j];
+	return graph_clone;
+}
 
 /**
  * @brief Check if it is possible to create a graph.
@@ -22,9 +35,12 @@
  */
 bool graph_possible(const State &state)
 {
-	for (Player player: state.players)
-		if (player.num_cards < accumulate(player.sets.begin(), player.sets.end(), 0))
+	for (size_t player = 0; player < state.players.size(); player++) {
+		int total = accumulate(state.players[player].sets.begin(), state.players[player].sets.end(), 0);
+		int num_quartets = std::count(state.quartets.begin(), state.quartets.end(), player);
+		if (state.players[player].num_cards - num_quartets < total)
 			return false;
+	}
 	return true;
 }
 

@@ -23,7 +23,7 @@ CFLAGS        = -Wall -Wextra -Werror -pedantic -std=c++11 $(EXTRAS)
 IFLAGS        = -I $(INC_DIR)
 TFLAGS        = -lcriterion
 
-TARGETS       = quaternity test
+TARGETS       = quaternity #test
 
 # -----------------------------------------------------------------------------
 # Build rules

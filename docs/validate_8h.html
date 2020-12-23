@@ -124,43 +124,49 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if the question asked is valid. </p>
-<p>Check if the values (player, set, card) are all within the bounds they can be. Additionally check if the player whom a question is asked has at least one card and check that the question is not pointed towards oneself. We also make sure that there is at least one valid answer possible.</p>
+<p>Check if the values (player, set, card) are all within the bounds they can be. Additionally check if the player whom a question is asked has at least one card, check that the question is not pointed towards oneself and check that we do not ask for a card from a quartet. We also make sure that there is at least one valid answer possible.</p>
 <dl class="section return"><dt>Returns</dt><dd>array with two boolean values, the first one indicates if 0/false is a valid answer to the question, the second one indicates if 1/true is valid, if there is no valid answer possible NULL is returned </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00087">87</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Player is out of bounds.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &gt;= settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Set is out of bounds.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &gt;= settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Card is out of bounds.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a> == question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;You cannot ask yourself a question.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>].num_cards &lt; 1) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Player &quot;</span> &lt;&lt; question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt;&lt; <span class="stringliteral">&quot; does not have any cards.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">bool</span> *valid_answers = <span class="keyword">new</span> <span class="keywordtype">bool</span>[2];</div>
+<p class="definition">Definition at line <a class="el" href="validate_8cpp_source.html#l00089">89</a> of file <a class="el" href="validate_8cpp_source.html">validate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &gt;= settings.<a class="code" href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">NUM_PLAYERS</a>) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Player is out of bounds.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a> &gt;= settings.<a class="code" href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">NUM_SETS</a>) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Set is out of bounds.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &lt; 0 || question.<a class="code" href="structQuestion.html#a971bbc717d8890226d187afde6e42756">card</a> &gt;= settings.<a class="code" href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">SET_SIZE</a>) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Card is out of bounds.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a8473e0f33782aa5732beb378a228d383">onturn</a> == question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;You cannot ask yourself a question.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>[question.<a class="code" href="structQuestion.html#a5b5a73bf2de32d9b8283dc7a119578fc">set</a>] != -1) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;You cannot ask a card from a quartet.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    valid_answers[0] = <a class="code" href="validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a>(settings, state, question, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    valid_answers[1] = <a class="code" href="validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a>(settings, state, question, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> !valid_answers[0] &amp;&amp; !valid_answers[1] ? NULL : valid_answers;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> num_quartets = std::count(state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>.begin(), state.<a class="code" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a>.end(), question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (state.<a class="code" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a>[question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a>].num_cards - num_quartets &lt; 1) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Player &quot;</span> &lt;&lt; question.<a class="code" href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">player</a> &lt;&lt; <span class="stringliteral">&quot; does not have any cards.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">bool</span> *valid_answers = <span class="keyword">new</span> <span class="keywordtype">bool</span>[2];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    valid_answers[0] = <a class="code" href="validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a>(settings, state, question, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    valid_answers[1] = <a class="code" href="validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a>(settings, state, question, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> !valid_answers[0] &amp;&amp; !valid_answers[1] ? NULL : valid_answers;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -169,7 +175,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructSettings_html_a78cf5ed18d69ce74d769a4a9058154c5"><div class="ttname"><a href="structSettings.html#a78cf5ed18d69ce74d769a4a9058154c5">Settings::SET_SIZE</a></div><div class="ttdeci">const int SET_SIZE</div><div class="ttdoc">The size of one set, aka the number of cards in one set.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00027">settings.h:27</a></div></div>
 <div class="ttc" id="astructSettings_html_a86e8b42ad2fcbb6bb68f2b02b932899a"><div class="ttname"><a href="structSettings.html#a86e8b42ad2fcbb6bb68f2b02b932899a">Settings::NUM_PLAYERS</a></div><div class="ttdeci">const int NUM_PLAYERS</div><div class="ttdoc">The number of players playing the game.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00037">settings.h:37</a></div></div>
 <div class="ttc" id="astructState_html_a4183466316e6a008061fdf0871d1cc87"><div class="ttname"><a href="structState.html#a4183466316e6a008061fdf0871d1cc87">State::players</a></div><div class="ttdeci">std::vector&lt; Player &gt; players</div><div class="ttdoc">The information on all the players.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00081">state.h:81</a></div></div>
-<div class="ttc" id="avalidate_8cpp_html_a5e12ba62fd3b3050bf284205cde1acc6"><div class="ttname"><a href="validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a></div><div class="ttdeci">bool valid_answer(const Settings &amp;settings, const State &amp;state, const Question &amp;question, const Answer &amp;answer)</div><div class="ttdoc">Check if the question asked and the answer given are valid.</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00049">validate.cpp:49</a></div></div>
+<div class="ttc" id="astructState_html_aaca9c1ef9cdf14200593649ac8bf370b"><div class="ttname"><a href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">State::quartets</a></div><div class="ttdeci">std::vector&lt; int &gt; quartets</div><div class="ttdoc">The information of who has a certain quartet.</div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00090">state.h:90</a></div></div>
+<div class="ttc" id="avalidate_8cpp_html_a5e12ba62fd3b3050bf284205cde1acc6"><div class="ttname"><a href="validate_8cpp.html#a5e12ba62fd3b3050bf284205cde1acc6">valid_answer</a></div><div class="ttdeci">bool valid_answer(const Settings &amp;settings, const State &amp;state, const Question &amp;question, const Answer &amp;answer)</div><div class="ttdoc">Check if the question asked and the answer given are valid.</div><div class="ttdef"><b>Definition:</b> <a href="validate_8cpp_source.html#l00050">validate.cpp:50</a></div></div>
 <div class="ttc" id="astructQuestion_html_a8732aedb9654217fbfe736732c2e4d4b"><div class="ttname"><a href="structQuestion.html#a8732aedb9654217fbfe736732c2e4d4b">Question::player</a></div><div class="ttdeci">int player</div><div class="ttdoc">The player the question is asked to.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00022">round.h:22</a></div></div>
 <div class="ttc" id="astructQuestion_html_a971bbc717d8890226d187afde6e42756"><div class="ttname"><a href="structQuestion.html#a971bbc717d8890226d187afde6e42756">Question::card</a></div><div class="ttdeci">int card</div><div class="ttdoc">The card in the set which is asked for.</div><div class="ttdef"><b>Definition:</b> <a href="round_8h_source.html#l00032">round.h:32</a></div></div>
 <div class="ttc" id="astructSettings_html_a411c7df35c83865a5273ae9bf2d57790"><div class="ttname"><a href="structSettings.html#a411c7df35c83865a5273ae9bf2d57790">Settings::NUM_SETS</a></div><div class="ttdeci">const int NUM_SETS</div><div class="ttdoc">The number of sets.</div><div class="ttdef"><b>Definition:</b> <a href="settings_8h_source.html#l00032">settings.h:32</a></div></div>

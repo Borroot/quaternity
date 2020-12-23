@@ -56,7 +56,8 @@ std::vector<Player> init_players(const Settings &settings)
  */
 State init_state(const Settings &settings)
 {
-	return State{0, init_cards(settings), init_players(settings)};
+	std::vector<int> quartets(settings.NUM_SETS, -1);
+	return State{0, init_cards(settings), init_players(settings), quartets};
 }
 
 /**
@@ -93,5 +94,5 @@ std::vector<Player> copy_players(const std::vector<Player> players)
  */
 State copy_state(const State &state)
 {
-	return State{state.onturn, copy_cards(state.cards), copy_players(state.players)};
+	return State{state.onturn, copy_cards(state.cards), copy_players(state.players), state.quartets};
 }

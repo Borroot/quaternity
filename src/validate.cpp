@@ -5,6 +5,7 @@
  * optionally plus answer, or state is valid.
  */
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
 
@@ -77,8 +78,9 @@ bool valid_answer(const Settings &settings, const State &state, const Question &
  *
  * Check if the values (player, set, card) are all within the bounds they can
  * be. Additionally check if the player whom a question is asked has at least
- * one card and check that the question is not pointed towards oneself. We also
- * make sure that there is at least one valid answer possible.
+ * one card, check that the question is not pointed towards oneself and check
+ * that we do not ask for a card from a quartet. We also make sure that there
+ * is at least one valid answer possible.
  *
  * @return array with two boolean values, the first one indicates if 0/false is
  * a valid answer to the question, the second one indicates if 1/true is valid,
@@ -106,7 +108,13 @@ bool *valid_question(const Settings &settings, const State &state, const Questio
 		return NULL;
 	}
 
-	if (state.players[question.player].num_cards < 1) {
+	if (state.quartets[question.set] != -1) {
+		std::cerr << "You cannot ask a card from a quartet." << std::endl;
+		return NULL;
+	}
+
+	int num_quartets = std::count(state.quartets.begin(), state.quartets.end(), question.player);
+	if (state.players[question.player].num_cards - num_quartets < 1) {
 		std::cerr << "Player " << question.player << " does not have any cards." << std::endl;
 		return NULL;
 	}

@@ -85,6 +85,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4183466316e6a008061fdf0871d1cc87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPlayer.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#a4183466316e6a008061fdf0871d1cc87">players</a></td></tr>
 <tr class="memdesc:a4183466316e6a008061fdf0871d1cc87"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information on all the players.  <a href="structState.html#a4183466316e6a008061fdf0871d1cc87">More...</a><br /></td></tr>
 <tr class="separator:a4183466316e6a008061fdf0871d1cc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca9c1ef9cdf14200593649ac8bf370b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">quartets</a></td></tr>
+<tr class="memdesc:aaca9c1ef9cdf14200593649ac8bf370b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information of who has a certain quartet.  <a href="structState.html#aaca9c1ef9cdf14200593649ac8bf370b">More...</a><br /></td></tr>
+<tr class="separator:aaca9c1ef9cdf14200593649ac8bf370b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The complete game state. </p>
@@ -145,6 +148,25 @@ Public Attributes</h2></td></tr>
 <p>This is where it is defined who is player 0, 1, etc. </p>
 
 <p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00081">81</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
+
+</div>
+</div>
+<a id="aaca9c1ef9cdf14200593649ac8bf370b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca9c1ef9cdf14200593649ac8bf370b">&#9670;&nbsp;</a></span>quartets</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; State::quartets</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The information of who has a certain quartet. </p>
+<p>The quartet array contains <code>NUM_SETS</code> entries, so one for every set, if the entry is -1, no one has the full set, if someone does have the quartet the entry is equal to the player index who has the quartet. </p>
+
+<p class="definition">Definition at line <a class="el" href="state_8h_source.html#l00090">90</a> of file <a class="el" href="state_8h_source.html">state.h</a>.</p>
 
 </div>
 </div>
