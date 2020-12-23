@@ -35,11 +35,9 @@ Graph graph_copy(const Graph graph)
  */
 bool graph_possible(const Settings &settings, const State &state)
 {
-	for (size_t player = 0; player < state.players.size(); player++) {
-		int total = accumulate(state.players[player].sets.begin(), state.players[player].sets.end(), 0);
-		if (info_num_cards(settings, state, player) < total)
+	for (Player player: state.players)
+		if (player.num_cards < accumulate(player.sets.begin(), player.sets.end(), 0))
 			return false;
-	}
 	return true;
 }
 
