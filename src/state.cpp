@@ -98,11 +98,18 @@ State copy_state(const State &state)
 	return State{state.onturn, copy_cards(state.cards), copy_players(state.players), state.quartets};
 }
 
+/**
+ * @brief Get the number of quartets the given player has.
+ */
 int info_num_quartets(const State &state, int player)
 {
 	return std::count(state.quartets.begin(), state.quartets.end(), player);
 }
 
+/**
+ * @brief Get the number of cards the player has without counting the cards
+ * from quartets, so the actual number of cards the player has in its hands.
+ */
 int info_num_cards(const Settings &settings, const State &state, int player)
 {
 	return state.players[player].num_cards - settings.SET_SIZE * info_num_quartets(state, player);
