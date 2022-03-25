@@ -24,6 +24,15 @@ If player _y_ also does not have any cards left, we choose the first player with
 The game finishes when all the sets have been completed and thus when every player has no cards in their hands. The player with the most points (completed sets) wins. If there are multiple people with the same amount of sets then everyone loses.
 
 ## Validator
+The validator checks whether a given quaternity state is valid, i.e. whether it is possible given the constraints to assign all the cards to the players. This is done by performing a bipartite matching algorithm on a carefully constructed graph, iff there exists a complete matching the state is valid.
+
+Internally only three values are needed to encode the state of the game. For every player we keep track of the number of cards the player has. For every card we keep track of which players _can_ have that card. For every player we keep track of the _minimum_ number of cards that player has from each set.
+
+The constructed bipartite graph consists of two sets (left (_L_) and right (_R_)), each containing _S_ * _N_ elements, i.e. one for every card in the game. In the left set we encode the hands of the players. For example, if the first player has 4 cards and the second player has 2 cards, then the first 4 elements of _L_ are assigned to player one and the last 2 elements of _L_ are assigned to player two. The right set encodes all the cards. For example, the first element is card zero from set zero, the seventh element is card two from set one (if _S_ = 4), etc.
+
+With these encodings in mind we draw connections between elements from the left set and the right set. For every player we go through all the set constraints. For each set constraint we take one element from the players' hand and draw lines from here to the cells of that set, if the card constraint allows this player to have that specific card. This makes sure that the player will minimally have a card of that set, thereby encoding the set constraint. All of the leftover spots in the hand of the player will be connected to every card that the player can have.
+
+Performing the bipartite matching algorithm on this graph now tells us whether the state is valid or not.
 
 ## Documentation
 An extensive documentation of the code can be found [here](https://borroot.github.io/quaternity/files.html).
